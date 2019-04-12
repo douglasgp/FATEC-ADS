@@ -1,5 +1,5 @@
 package br.com.ipl010.aula05;
-
+// JDK: https://developers.redhat.com/products/openjdk/download/?sc_cid=701f2000000RWTnAAO
 public class Exemplo01 {
 	public static void main(String[] args) {
 		
