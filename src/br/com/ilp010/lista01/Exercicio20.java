@@ -7,7 +7,7 @@ import java.util.Scanner;
  * inteiros determinando qual o maior valor recebido. A sequência de valores será
  * interrompida quando o usuário fornecer um valor negativo (valor < 0). 
  */
-public class Excercicio20 {
+public class Exercicio20 {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		// Declaração das variáveis
