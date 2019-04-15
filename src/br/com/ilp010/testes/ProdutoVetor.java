@@ -1,4 +1,4 @@
-package br.com.ilp010.lista01;
+package br.com.ilp010.testes;
 
 import java.util.Scanner;
 
