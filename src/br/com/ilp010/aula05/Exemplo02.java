@@ -1,4 +1,4 @@
-package br.com.ipl010.aula05;
+package br.com.ilp010.aula05;
 
 import java.util.Scanner;
 
