@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body onload="javascript:start()">
+	<script language="JavaScript">
+		function start() {
+			var hoje = new Date();
+			var diaSemana = hoje.getDay();
+			var nomeDiaSemana = "";
+			document.write("<h1>Estrutura de Controle - IF/ELSE</h1>");
+			if (diaSemana == 0) {
+				document.write("Hoje é Domingo");
+			} else if (diaSemana == 1) {
+				document.write("Hoje é Segunda");
+			} else if (diaSemana == 2) {
+				document.write("Hoje é Terça");
+			} else if (diaSemana == 3) {
+				document.write("Hoje é Quarta");
+			} else if (diaSemana == 4) {
+				document.write("Hoje é Quinta");
+			} else if (diaSemana == 5) {
+				document.write("Hoje é Sexta");
+			} else if (diaSemana == 6) {
+				document.write("Hoje é Sábado");
+			}
+		}
+	</script>
+</body>
+</html>
