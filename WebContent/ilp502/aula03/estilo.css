@@ -1,0 +1,37 @@
+@charset "ISO-8859-1";
+
+body {
+	/*background: radial-gradient(#870500, #53346a);*/
+	background: linear-gradient(132deg, #ec5218, #1665c1);
+	backgound-size: 480% 480%;
+	/*font-family: "Comfortaa", sans-serif;*/
+	anamation: BackgroundGradient 30s ease infinite;
+}
+
+@kayframes Background { 
+	0% {background-position: 0% 50%;}
+	50% {background-position: 100% 50%;}
+	100% {background-position: 0% 50%;}
+}
+h1 {
+	/*position: absolute;*/
+	left: 50%;
+	top: 50%;
+	transform: tranlateX(-50%) tranlateY(-50%);
+	font-family: Open Sans, sans-sefif;
+	color: #cee;
+	font-weight: 400;
+	text-transform: uppercase;
+	text-align: center;
+	font-size: 2em;
+	background-color: #216;
+	padding: 5px;
+}
+
+p {
+	color: white;
+}
+
+li {
+	list-style-type: square;
+}
