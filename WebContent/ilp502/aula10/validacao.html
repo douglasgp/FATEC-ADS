@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Validação</title>
+</head>
+<body>
+	<script language="JavaScript">
+		function validarNome() {
+			if (nome.value === "") {
+				nome.style.backgroundColor = "red";
+				msg.innerHTML = "Atenção: Preencha o campo nome!";
+			} else {
+				nome.style.backgroundColor = "white";
+				nome.value = nome.value.toUpperCase();
+				msg.innerHTML = "";
+			}
+		}
+		function validarIdade() {
+			if (isNaN(idade.value || idade.value === "")) {
+				idade.style.backgroundColor = "red";
+				alert("Digite apenas número!");
+			} else
+				idade.style.backgroundColor = "white";
+		}
+		function validarSobrenome() {
+			if (sobrenome.value === "") {
+				sobrenome.style.backgroundColor = "red";
+				alert("Atenção: preencha o compo Sobrenome!");
+			} else {
+				sobrenome.style.backgroundColor = "white";
+				sobrenome.value = sobrenome.value.toUpperCase();
+			}
+		}
+		function validaEmail() {
+			if (email.value === "") {
+				email.style.backgroundColor = "red";
+				alert("E-mail inválido!");
+			} else
+				email.style.backgroundColor = "white"
+		}
+	</script>
+	<h1>Dados do Formulário</h1>
+	Nome:
+	<input type="text" id="nome" size="20" onblur="validarNome()">
+	<div id="msg"></div>
+	<br>
+	<br>Sobrenome:
+	<input type="text" id="sobrenome" size="20" onblur="validarSobrenome()">
+	<br>
+	<br> Idade:
+	<input type="text" id="idade" size="4" onblur="validarIdade()">
+	<br>
+	<br> E-mail:
+	<input type="text" id="email" size="40" onblur="validaEmail()">
+	<br>
+	<br>
+
+</body>
+</html>
