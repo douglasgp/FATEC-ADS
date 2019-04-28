@@ -21,7 +21,7 @@ public class DerivadasTombo1 {
 		 * coef *= pot; pot -= 1; System.out.println("Potência = " + pot +
 		 * "\nCoeficiente = " + coef);
 		 */
-		for (int i = pot; i >= 0; i--) {
+		for (int i = pot; i > 0; i--) {
 			derivada += 1;
 			coef *= pot;
 			pot -= 1;
