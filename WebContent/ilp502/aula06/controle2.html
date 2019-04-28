@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Estruturas de Controle</title>
+</head>
+<body onload="javascript:iniciar()">
+	<script language="JavaScript">
+		function iniciar() {
+			var hoje = new Date();
+			var diaSemana = hoje.getDay();
+			var nomeDiaSemana = "";
+			document.write("<h1>Estruturas de Controle - Switch</h1>");
+			document
+					.write("<br><p>De acordo com o valor da variável testada pelo comando, é determinado o bloco de código que será executado. "
+							+ "Neste exemplo, o número que representa o dia da semana é obtido e, com base em seu valor, o nome que representa o dia é "
+							+ "armazenado em uma variável sendo, posteriormente, exibido na ára de trabalho do navegador</P><br>")
+			switch (diaSemana) {
+			case 0:
+				nomeDiaSemana = "Domingo";
+				break;
+			case 1:
+				nomeDiaSemana = "Segunda";
+				break;
+			case 2:
+				nomeDiaSemana = "Terça";
+				break;
+			case 3:
+				nomeDiaSemana = "Quarta";
+				break;
+			case 4:
+				nomeDiaSemana = "Quinta";
+				break;
+			case 5:
+				nomeDiaSemana = "Sexta";
+				break;
+			case 6:
+				nomeDiaSemana = "Sábado";
+				break;
+			}
+			document.write("Hoje é " + nomeDiaSemana);
+		}
+	</script>
+</body>
+</html>
