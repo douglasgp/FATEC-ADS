@@ -18,9 +18,17 @@ public class DerivadasTombo1 {
 		// Solicita do usuário um valor para potência
 		System.out.println("Informe o valor da potência: ");
 		pot = scan.nextInt();
+<<<<<<< HEAD
 		// Realiza cálculo da derivada baseado no coeficiente e potência informados, n
 		// vezes até potência = 0
 		for (int i = pot; i >= 0; i--) {
+=======
+		/*
+		 * coef *= pot; pot -= 1; System.out.println("Potência = " + pot +
+		 * "\nCoeficiente = " + coef);
+		 */
+		for (int i = pot; i > 0; i--) {
+>>>>>>> branch 'master' of https://github.com/douglasgp/FATEC-ADS
 			derivada += 1;
 			coef *= pot;
 			pot -= 1;
