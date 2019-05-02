@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body onload="javascript:tombo()">
+	<script language="JavaScript">
+		function tombo(){
+			var derivada = 0;
+			var coef;
+			var pot = 0;
+			for(int i = pot; i >=0; i--){
+				derivada += 1;
+				coef *= pot;
+				pot -= 1;
+				resultado.value = "<br>Derivada = " + derivada + "º grau<br>Coeficiente = " + coef + "\nPotência = " + pot;
+			}
+			
+		}
+	</script>
+	<h1>Cálculo - Regra do Tompo</h1>
+	Coeficiente:<input type="text" id="coef" size="20" onblur="validaCoef()">
+	<br><br>
+	Potência: <input type="text" id="pot" size="20" onblur="validaPot()">
+	<br><br>
+	<input type="button" value="Derivar" onclick="javascript:tombo()"><br><br>
+	<div id="resultado">&nbsp;</div>
+	Resultado: <input type="text" id="resultado" readonly>
+</body>
+</html>

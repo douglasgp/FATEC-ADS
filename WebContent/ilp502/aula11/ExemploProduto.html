@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script type="text/javascript" src="validacao.js"></script>
+<title>Produto</title>
+</head>
+<body>
+	<h1>Produto</h1>
+	<p>
+	Produto:
+	<input type="text" id="prod" onblur="validarProduto()">
+	<br> Quantidade:
+	<input type="text" id="qtd" onblur="validarQuantidade()">
+	<br> Preço Unitário:
+	<input type="text" id="precoUnit" onblur="validarPrecoUnit()">
+	<br> Desconto:
+	<input type="text" id="desc" onblur="validarDesconto()">
+	<br>
+	<input type="button" value="Calcular" onblur="calcular()">
+	<br> Preço Final:
+	<input type="text" id="final" readonly onblur="calcular()">
+
+</body>
+</html>
