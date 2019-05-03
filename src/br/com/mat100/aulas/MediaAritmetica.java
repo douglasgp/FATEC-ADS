@@ -2,7 +2,7 @@ package br.com.mat100.aulas;
 
 import java.util.Scanner;
 
-public class MedidasPosicao {
+public class MediaAritmetica {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
 		// Declaração das variáveis
