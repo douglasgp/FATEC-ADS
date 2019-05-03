@@ -6,14 +6,17 @@ import java.util.Scanner;
 public class Mediana {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
+		// Solicita do usuário uma quantidade de elementos
+		System.out.println("Infome a quantidade de total de elementos: ");
+		int num = scan.nextInt();
 		// Declaração das variáveis
-		int num = 13;
+		// int num = 0;
 		int vetor[] = new int[num];
 		int mediana = 0;
 		int aux = 0;
-		// Estrutura para solicitar do usuário n valores do tamanho do vetor.
+		// Estrutura para solicitar do usuário o valores do vetor.
 		System.out.println("Você irá informar " + num + " valores inteiros!");
-
+		// Mensagem para apresentar quantidade de valores que deverá ser informado.
 		for (int i = 0; i < num; i++) {
 			System.out.println("Inform o " + (i + 1) + "º valor: ");
 			vetor[i] = scan.nextInt();
