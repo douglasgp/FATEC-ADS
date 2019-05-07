@@ -75,6 +75,7 @@ public class FuncaoDerivada {
 	}
 
 	// CÃ¡lculo da funÃ§Ã£o de (x + deltaX)
+	// Verificação
 	public static int fDeltaX(int resultadoDeltaX, int x) {
 		int funDeltaX = x + (resultadoDeltaX - x);
 		return funDeltaX;
