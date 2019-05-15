@@ -115,8 +115,7 @@ function apolice() {
 		valorApolice -= descIdade;
 	}
 	// Cálculo de desconto pelo bônus
-	valorApolice -= (valorApolice * vBonus) / 100;
-	
+	valorApolice -= ( vBonus * valorApolice) / 100;
 	
 	resultado.innerHTML = "Valor apólice: R$ " + valorApolice;
 }
