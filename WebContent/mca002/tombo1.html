@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<meta charset="UTF-8">
+<script type="text/javascript" src="valida-tombo1.js"></script>
+<title>Regra Tombo</title>
 </head>
-<body onload="javascript:tombo()">
-	<script language="JavaScript">
-		function tombo(){
-			var derivada = 0;
-			var coef;
-			var pot = 0;
-			for(int i = pot; i >=0; i--){
-				derivada += 1;
-				coef *= pot;
-				pot -= 1;
-				resultado.value = "<br>Derivada = " + derivada + "º grau<br>Coeficiente = " + coef + "\nPotência = " + pot;
-			}
-			
-		}
-	</script>
-	<h1>Cálculo - Regra do Tompo</h1>
-	Coeficiente:<input type="text" id="coef" size="20" onblur="validaCoef()">
-	<br><br>
-	Potência: <input type="text" id="pot" size="20" onblur="validaPot()">
-	<br><br>
-	<input type="button" value="Derivar" onclick="javascript:tombo()"><br><br>
+<body>
+	
+	<h1>CÃ¡lculo - Regra do Tompo ( INCOMPLETO )</h1>
+	Coeficiente: <input type="text" id="coef" size="20" onblur="validaCoef()">
+	<br>
+	<br> PotÃªncia: <input type="text" id="pot" size="20" onblur="validaPot()">
+	<br>
+	<br>
+	<input type="button" value="Calcular" onclick="derivar()" onblur="derivar()">
+	
+	<!-- <div id="resultado">&nbsp;</div> -->
 	<div id="resultado">&nbsp;</div>
 	Resultado: <input type="text" id="resultado" readonly>
+
+	<hr>
+	<div id="resultado"></div>
+	
+	<hr>
+	<a href="mca002.html">Menu Principal: MCA002</a>
+
 </body>
 </html>
