@@ -10,12 +10,12 @@ public class Leitor {
 		// Leitura do tamanho
 		int TAMANHO = dis.readInt();
 		System.out.println("Tamanho " + TAMANHO);
-		// dEFINIR arrays
+		// Definir arrays
 		int[] codigo = new int[TAMANHO];
 		String[] nome = new String[TAMANHO];
 		double[] preco = new double[TAMANHO];
 		String[] descricao = new String[TAMANHO];
-		// Leitura ddos itens
+		// Leitura dos itens
 		for (int i = 0; i < TAMANHO; i++) {
 			codigo[i] = dis.readInt();
 			nome[i] = dis.readUTF();
