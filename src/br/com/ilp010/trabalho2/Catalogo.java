@@ -63,6 +63,9 @@ public class Catalogo {
         String[] nome = new String[TAMANHO];
         double[] preco = new double[TAMANHO];
         String[] descricao = new String[TAMANHO];
+        // Apresenta Menu de opções do Carrinho de Compras
+        System.out.printf("%4.3s | %-20.8s | %7.9s | %s\n", "A. Selecionar ", "B. Ver",   "C. Excluir", "D. Voltar");
+        System.out.printf("%4.3s | %-20.8s | %7.9s | %s\n", "Item",           "Carrinho", "ítem",       "Menu Principal");
         // Leitura dos ítens do catálogo
 		System.out.printf("%4.3s | %-20.8s | %7.9s | %s\n", "CÓD", "NOME", "PREÇO", "DESCRIÇÃO");
 		for(int i = 0; i < TAMANHO; i++) {
@@ -72,6 +75,15 @@ public class Catalogo {
 			descricao[i] = dis.readUTF();
 			System.out.printf("%04d | %-20s | %7.2f | %s\n", codigo[i], nome[i], preco[i], descricao[i]);
 		}
+		int opcaoCarrinho = 0;
+		do {
+			// Apresenta menu de opções
+			switch(opcaoCarrinho) {
+			case 1:
+				
+			}
+		} while (opcaoCarrinho != '0');
+		
         
 	}
 	
