@@ -57,15 +57,17 @@ public class Catalogo {
         DataInputStream dis = new DataInputStream(new FileInputStream("src/br/com/ilp010/trabalho2/catalogo01.db"));
         // Leitura do tamanho
         int TAMANHO = dis.readInt();
-        System.out.println("Tamanho " + TAMANHO);
+        //System.out.println("Tamanho " + TAMANHO);
         // Definir arrays
         int[] codigo = new int[TAMANHO];
         String[] nome = new String[TAMANHO];
         double[] preco = new double[TAMANHO];
         String[] descricao = new String[TAMANHO];
         // Apresenta Menu de opções do Carrinho de Compras
-        System.out.printf("%4.3s | %-20.8s | %7.9s | %s\n", "A. Selecionar ", "B. Ver",   "C. Excluir", "D. Voltar");
-        System.out.printf("%4.3s | %-20.8s | %7.9s | %s\n", "Item",           "Carrinho", "ítem",       "Menu Principal");
+        System.out.println(" = = = = = = =  = = = = = = = MENU CARRINHO DE COMPRAS  = = = = = = =  = = = = = = = ");
+        System.out.printf("%14.13s | %-20.15s | %17.10s | %s\n", "A. Selecionar", "B. Ver Carrinho","C. Excluir", "D. Voltar");
+        System.out.printf("%14.13s | %-20.6s | %17.10s | %s\n", "Item",          "de Compras",     "ítem",       "Menu Principal");
+        
         // Leitura dos ítens do catálogo
 		System.out.printf("%4.3s | %-20.8s | %7.9s | %s\n", "CÓD", "NOME", "PREÇO", "DESCRIÇÃO");
 		for(int i = 0; i < TAMANHO; i++) {
@@ -80,13 +82,32 @@ public class Catalogo {
 			// Apresenta menu de opções
 			switch(opcaoCarrinho) {
 			case 1:
-				
+				addItemCarrinho();
+				break;
+			case 2:
+				verCarrinho();
+				break;
+			case 3:
+				removeItemCarrinho();
+				break;
 			}
 		} while (opcaoCarrinho != '0');
 		
         
 	}
-	
+	// Função para adicionar item ao carrinho
+	public static void addItemCarrinho() {
+		
+		
+	}
+	// Função para ver conteúdo do carrinho de compras
+	public static void verCarrinho() {
+		
+	}
+	// Função para remover itens do carrinho de compras
+	public static void removeItemCarrinho() {
+		
+	}
     // função que exibe o menu principal
     public static int menu() {
         System.out.println("==============");
