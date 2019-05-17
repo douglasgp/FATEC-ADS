@@ -25,18 +25,19 @@ public class Catalogo {
                 case 'M': // aciona função de exibição do mapa de veículos
                     finalizaCompra();
                     break;
-                case '0': // saída do programa
+                case 'O': // saída do programa
+                	sairAplicacao();
                     break;
                 default:
                     System.out.println("Operação Inválida!");
             }
-        } while (opcao != '0'); // repete enquanto opção diferente de sair
+        } while (opcao != 'O'); // repete enquanto opção diferente de sair
     
 	}
-	// Função para finalizar compra
-	public static void finalizaCompra() {
-		System.out.println("Saindo!");
-		System.exit(-1);
+	// Função para sair da aplicação
+	public static void sairAplicacao() {
+		System.out.println("Saindo da Aplicação!");
+		System.exit(0);
 	}
 	
 	// Função para apresentar carrinho de compras
@@ -44,11 +45,33 @@ public class Catalogo {
 		
 	}
 	
+	// Função para finalizar e gerar arquivo de compra
+	public static void finalizaCompra() {
+		
+	}
 	// Função que mostra itens no catálogo
 	public static void mostraCatalogo() throws IOException {
 		System.out.println("==============");
         System.out.println("Catálogo de Produtos");
-        
+        System.out.println("");
+        DataInputStream dis = new DataInputStream(new FileInputStream("src/br/com/ilp010/trabalho2/catalogo01.db"));
+        // Leitura do tamanho
+        int TAMANHO = dis.readInt();
+        System.out.println("Tamanho " + TAMANHO);
+        // Definir arrays
+        int[] codigo = new int[TAMANHO];
+        String[] nome = new String[TAMANHO];
+        double[] preco = new double[TAMANHO];
+        String[] descricao = new String[TAMANHO];
+        // Leitura dos ítens do catálogo
+		System.out.printf("%4.3s | %-20.8s | %7.9s | %s\n", "CÓD", "NOME", "PREÇO", "DESCRIÇÃO");
+		for(int i = 0; i < TAMANHO; i++) {
+			codigo[i] = dis.readInt();
+			nome[i] = dis.readUTF();
+			preco[i] = dis.readDouble();
+			descricao[i] = dis.readUTF();
+			System.out.printf("%04d | %-20s | %7.2f | %s\n", codigo[i], nome[i], preco[i], descricao[i]);
+		}
         
 	}
 	
@@ -58,12 +81,12 @@ public class Catalogo {
         System.out.println("Catálogo de Produtos");
         System.out.println();
         System.out.println("A. Consulta de Itens");
-        System.out.println("B. Selecionar Itens Carrinho de Compras");
+        System.out.println(" . Selecionar Itens Carrinho de Compras");
         System.out.println("C. Consultar Carrinho de Compras");
-        System.out.println("D. Excluir itens");
-        System.out.println("E. Gerar conta");
-        System.out.println("F. Finalizar compra");
-        System.out.println("G. Sair");
+        System.out.println(" . Excluir itens");
+        System.out.println(" . Gerar conta");
+        System.out.println("M. Finalizar compra");
+        System.out.println("0. Sair");
         System.out.print("> ");
         return scan.next().toUpperCase().charAt(0);
     }
