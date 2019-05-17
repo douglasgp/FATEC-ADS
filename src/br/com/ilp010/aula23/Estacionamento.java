@@ -36,7 +36,7 @@ public class Estacionamento {
 			case 'M': // aciona função de exibição do mapa das vagas
 				mapaVagas();
 				break;
-			case '0': // saída do programa
+			case 'O': // saída do programa
 				break;
 			default:
 				System.out.println("Operação Inválida!");
