@@ -23,9 +23,9 @@ public class Matriz01 {
 		for (int l = 0; l < LINHA; l++) {
 			// laço para percorrer as colunas da matriz
 			for (int c = 0; c < COLUNA; c++) {
-				System.out.printf(" / %2d",a[l][c]);
+				System.out.printf("| %2d",a[l][c]);
 			}
-			System.out.println();
+			System.out.println("|");
 		}
 	}
 
