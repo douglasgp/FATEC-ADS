@@ -5,16 +5,16 @@ import java.util.Scanner;
 public class FuncaoDerivada {
 	public static void main(String[] args) {
 		Scanner scan = new Scanner(System.in);
-		// Declarações das variáveis
+		// DeclaraÃ§Ãµes das variÃ¡veis
 		int x = 0;
 		// Entrada de dados
-		System.out.println("Função de 1º grau: informe o valor de 'x': ");
+		System.out.println("FunÃ§Ã£o de 1Âº grau: informe o valor de 'x': ");
 		x = scan.nextInt();
-		// Chamada do mÃ©todo da 1º função
+		// Chamada do mÃ©todo da 1Âº funÃ§Ã£o
 		int resultado = funcaoUm(x);
 		System.out.println("x = " + x);
-		System.out.println("Função genérica:\nf(x) = 2.x +1");
-		// Apresenta o resultado da 1º função a partir da entrada do valor em x
+		System.out.println("FunÃ§Ã£o genÃ©rica:\nf(x) = 2.x +1");
+		// Apresenta o resultado da 1Âº funÃ§Ã£o a partir da entrada do valor em x
 		System.out.println("\nf(" + x + ") = 2." + x + " +1 = " + resultado);
 		// Chama o mÃ©todo da 2Âº funÃ§Ã£o
 		int resultado2 = funcaoDois(resultado);
@@ -75,7 +75,7 @@ public class FuncaoDerivada {
 	}
 
 	// CÃ¡lculo da funÃ§Ã£o de (x + deltaX)
-	// Verificação
+	// VerificaÃ§Ã£o
 	public static int fDeltaX(int resultadoDeltaX, int x) {
 		int funDeltaX = x + (resultadoDeltaX - x);
 		return funDeltaX;
