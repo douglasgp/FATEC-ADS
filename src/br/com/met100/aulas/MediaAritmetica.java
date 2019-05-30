@@ -1,4 +1,4 @@
-package br.com.mat100.aulas;
+package br.com.met100.aulas;
 
 import java.util.Scanner;
 
