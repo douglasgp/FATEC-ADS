@@ -1,5 +1,5 @@
 package br.com.ilp010.trabalho2;
-
+// http://215.55.32.164/moodle/course/view.php?
 import java.io.DataInputStream;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -12,47 +12,47 @@ public class Catalogo {
 	public static void main(String a[]) throws IOException {
 		int opcao = 0;
         do {
-            // mostra menu de opções
+            // mostra menu de opï¿½ï¿½es
             opcao = menu();
-            // processa opção escolhida no menu
+            // processa opï¿½ï¿½o escolhida no menu
             switch (opcao) {
-                case 'A': // aciona função de entrada de veículo
+                case 'A': // aciona funï¿½ï¿½o de entrada de veï¿½culo
                     mostraCatalogo();
                     break;
-                case 'C': // aciona função de exibição do mapa de veículos
+                case 'C': // aciona funï¿½ï¿½o de exibiï¿½ï¿½o do mapa de veï¿½culos
                     consultaCarrinho();
                     break;
-                case 'M': // aciona função de exibição do mapa de veículos
+                case 'M': // aciona funï¿½ï¿½o de exibiï¿½ï¿½o do mapa de veï¿½culos
                     finalizaCompra();
                     break;
-                case 'O': // saída do programa
+                case 'O': // saï¿½da do programa
                 	sairAplicacao();
                     break;
                 default:
-                    System.out.println("Operação Inválida!");
+                    System.out.println("Operaï¿½ï¿½o Invï¿½lida!");
             }
-        } while (opcao != 'O'); // repete enquanto opção diferente de sair
-    
+        } while (opcao != 'O'); // repete enquanto opï¿½ï¿½o diferente de sair
+
 	}
-	// Função para sair da aplicação
+	// Funï¿½ï¿½o para sair da aplicaï¿½ï¿½o
 	public static void sairAplicacao() {
-		System.out.println("Saindo da Aplicação!");
+		System.out.println("Saindo da Aplicaï¿½ï¿½o!");
 		System.exit(0);
 	}
-	
-	// Função para apresentar carrinho de compras
+
+	// Funï¿½ï¿½o para apresentar carrinho de compras
 	public static void consultaCarrinho() {
-		
+
 	}
-	
-	// Função para finalizar e gerar arquivo de compra
+
+	// Funï¿½ï¿½o para finalizar e gerar arquivo de compra
 	public static void finalizaCompra() {
-		
+
 	}
-	// Função que mostra itens no catálogo
+	// Funï¿½ï¿½o que mostra itens no catï¿½logo
 	public static void mostraCatalogo() throws IOException {
 		System.out.println("==============");
-        System.out.println("Catálogo de Produtos");
+        System.out.println("Catï¿½logo de Produtos");
         System.out.println("");
         DataInputStream dis = new DataInputStream(new FileInputStream("src/br/com/ilp010/trabalho2/catalogo01.db"));
         // Leitura do tamanho
@@ -63,13 +63,25 @@ public class Catalogo {
         String[] nome = new String[TAMANHO];
         double[] preco = new double[TAMANHO];
         String[] descricao = new String[TAMANHO];
-        // Apresenta Menu de opções do Carrinho de Compras
+        // Apresenta Menu de opï¿½ï¿½es do Carrinho de Compras
         System.out.println(" = = = = = = =  = = = = = = = MENU CARRINHO DE COMPRAS  = = = = = = =  = = = = = = = ");
-        System.out.printf("%14.13s | %-20.15s | %17.10s | %s\n", "A. Selecionar", "B. Ver Carrinho","C. Excluir", "D. Voltar");
-        System.out.printf("%14.13s | %-20.6s | %17.10s | %s\n", "Item",          "de Compras",     "ítem",       "Menu Principal");
-        
-        // Leitura dos ítens do catálogo
-		System.out.printf("%4.3s | %-20.8s | %7.9s | %s\n", "CÓD", "NOME", "PREÇO", "DESCRIÇÃO");
+        System.out.printf("%14.13s | %-20.15s | %17.10s | %s\n", "1. Selecionar itens do carrinho", "2. Ver Carrinho","3. Excluir", "4. Voltar");
+        System.out.printf("%14.13s | %-20.6s | %17.10s | %s\n", "Item",          "de Compras",     "ï¿½tem",       "Menu Principal");
+        System.out.println("INFORME UMA OPÃ‡ÃƒO: ");
+        int op = scan.nextInt();
+
+        if(op == 1){
+
+        }else if(op == 2){
+
+        }else if(op == 3){
+
+        }else if(op == 4){
+
+        }
+
+        // Leitura dos ï¿½tens do catï¿½logo
+		System.out.printf("%4.3s | %-20.8s | %7.9s | %s\n", "Cï¿½D", "NOME", "PREï¿½O", "DESCRIï¿½ï¿½O");
 		for(int i = 0; i < TAMANHO; i++) {
 			codigo[i] = dis.readInt();
 			nome[i] = dis.readUTF();
@@ -79,7 +91,7 @@ public class Catalogo {
 		}
 		int opcaoCarrinho = 0;
 		do {
-			// Apresenta menu de opções
+			// Apresenta menu de opï¿½ï¿½es
 			switch(opcaoCarrinho) {
 			case 1:
 				addItemCarrinho();
@@ -92,26 +104,26 @@ public class Catalogo {
 				break;
 			}
 		} while (opcaoCarrinho != '0');
-		
-        
+
+
 	}
-	// Função para adicionar item ao carrinho
+	// Funï¿½ï¿½o para adicionar item ao carrinho
 	public static void addItemCarrinho() {
-		
-		
+
+
 	}
-	// Função para ver conteúdo do carrinho de compras
+	// Funï¿½ï¿½o para ver conteï¿½do do carrinho de compras
 	public static void verCarrinho() {
-		
+
 	}
-	// Função para remover itens do carrinho de compras
+	// Funï¿½ï¿½o para remover itens do carrinho de compras
 	public static void removeItemCarrinho() {
-		
+
 	}
-    // função que exibe o menu principal
+    // funï¿½ï¿½o que exibe o menu principal
     public static int menu() {
         System.out.println("==============");
-        System.out.println("Catálogo de Produtos");
+        System.out.println("CatÃ¡logo de Produtos");
         System.out.println();
         System.out.println("A. Consulta de Itens");
         System.out.println(" . Selecionar Itens Carrinho de Compras");
