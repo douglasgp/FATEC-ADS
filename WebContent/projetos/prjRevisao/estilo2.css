@@ -1,5 +1,14 @@
 @CHARSET "UTF-8";
 
+/* Style the header */
+header {
+  background-color: #337;
+  padding: 5px;
+  text-align: center;
+  font-size: 25px;
+  color: white;
+}
+
 table {
 	width: 100%;
 }
