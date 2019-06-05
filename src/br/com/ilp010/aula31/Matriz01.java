@@ -7,9 +7,9 @@ public class Matriz01 {
 
 	public static void main(String[] args) {
 		// 1. Ler tamanho das LINHAS e COLUNAS das matrizes
-		System.out.println("Informe o número de linhas: ");
+		System.out.println("Informe o nï¿½mero de linhas: ");
 		int numLin = scan.nextInt();
-		System.out.println("Informe o número de colunas: ");
+		System.out.println("Informe o nï¿½mero de colunas: ");
 		int numCol = scan.nextInt();
 		// 1.1. Declara contador a ser usado dentro do 'for'
 		int res = 0;
@@ -31,20 +31,21 @@ public class Matriz01 {
 				mat2[l][c] = scan.nextInt();
 			}
 		}
-		// 5. Somar as posições das matrizes A e B atribuindo o resultado à matriz C
+		// 5. Somar as posiï¿½ï¿½es das matrizes A e B atribuindo o resultado ï¿½ matriz C
 		for (int l = 0; l < numLin; l++) {
 			for (int c = 0; c < numCol; c++) {
 				matR[l][c] = mat1[l][c] + mat2[l][c];
 			}
 		}
 		// 6. Exibir resultado da matriz C
+		System.out.println("\n= = RESULTADO = = ");
 		for (int l = 0; l < numLin; l++) {
 			for (int c = 0; c < numCol; c++) {
 				System.out.printf("| %2d ", matR[l][c]);
 			}
 			System.out.println("|");
 		}
-		// 7. Apresentar pré-visualização das matrizes
+		// 7. Apresentar prï¿½-visualizaï¿½ï¿½o das matrizes
 		System.out.println("\n= = MATRIZ 1 = = ");
 		for (int l = 0; l < numLin; l++) {
 			for (int c = 0; c < numCol; c++) {
