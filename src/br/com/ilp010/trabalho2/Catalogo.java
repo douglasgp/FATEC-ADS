@@ -12,44 +12,44 @@ public class Catalogo {
 	public static void main(String a[]) throws IOException {
 		int opcao = 0;
         do {
-            // mostra menu de op��es
+            // mostra menu de opões
             opcao = menu();
-            // processa op��o escolhida no menu
+            // processa opção escolhida no menu
             switch (opcao) {
-                case 'A': // aciona fun��o de entrada de ve�culo
+                case 'A': // 
                     mostraCatalogo();
                     break;
-                case 'C': // aciona fun��o de exibi��o do mapa de ve�culos
+                case 'C': // 
                     consultaCarrinho();
                     break;
-                case 'M': // aciona fun��o de exibi��o do mapa de ve�culos
+                case 'M': // 
                     finalizaCompra();
                     break;
-                case 'O': // sa�da do programa
+                case 'O': // 
                 	sairAplicacao();
                     break;
                 default:
-                    System.out.println("Opera��o Inv�lida!");
+                    System.out.println("Operação Inválida!");
             }
-        } while (opcao != 'O'); // repete enquanto op��o diferente de sair
+        } while (opcao != 'O'); // repete enquanto opção diferente de sair
 
 	}
-	// Fun��o para sair da aplica��o
+	// Função para sair da aplicação
 	public static void sairAplicacao() {
-		System.out.println("Saindo da Aplica��o!");
+		System.out.println("Aplicação encerrada!");
 		System.exit(0);
 	}
 
-	// Fun��o para apresentar carrinho de compras
+	// Função para apresentar carrinho de compras
 	public static void consultaCarrinho() {
 
 	}
 
-	// Fun��o para finalizar e gerar arquivo de compra
+	// Função para finalizar e gerar arquivo de compra
 	public static void finalizaCompra() {
 
 	}
-	// Fun��o que mostra itens no cat�logo
+	// Função que mostra itens no cat�logo
 	public static void mostraCatalogo() throws IOException {
 		System.out.println("==============");
         System.out.println("Cat�logo de Produtos");
@@ -107,20 +107,20 @@ public class Catalogo {
 
 
 	}
-	// Fun��o para adicionar item ao carrinho
+	// Função para adicionar item ao carrinho
 	public static void addItemCarrinho() {
 
 
 	}
-	// Fun��o para ver conte�do do carrinho de compras
+	// Função para ver conteúdo do carrinho de compras
 	public static void verCarrinho() {
 
 	}
-	// Fun��o para remover itens do carrinho de compras
+	// Função para remover itens do carrinho de compras
 	public static void removeItemCarrinho() {
 
 	}
-    // fun��o que exibe o menu principal
+    // função que exibe o menu principal
     public static int menu() {
         System.out.println("==============");
         System.out.println("Catálogo de Produtos");
