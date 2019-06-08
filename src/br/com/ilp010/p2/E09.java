@@ -16,34 +16,27 @@ Caso a solução apresentada não contenha a função solicitada, ocorrerá o de
 import java.util.Scanner;
 
 public class E09 {
-	// Elemento que recebe o tamanho do vetor
-	private static int VALOR = 20;
-
+	public static Scanner scan = new Scanner(System.in);
+	public static int VALOR = 10;
 	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
-		// Declaração do vetor com o tamanho de VALOR
+		// Declaração do vetor com o tamanho de VALOR fornecido pelo usuário
 		int num[] = new int[VALOR];
+		
 		// Estrutura para solicitar do usuário os valores
 		for (int i = 0; i < VALOR; i++) {
-			System.out.println("Informe o " + (i + 1) + "º valor (" + (i + 1) + "-|20):");
+			System.out.println("Informe o " + (i + 1) + "º valor (" + (i + 1) + "-|"+VALOR+"):");
 			num[i] = scan.nextInt();
 		}
-		// Número adicional
-		int adicional = num[4];
-		int contador = 0;
-		for (int i = 0; i < VALOR; i++) {
-			if (num[i] == adicional) {
-				contador++;
-			}
-		}
-		System.out.println("Frequência: " + contador);
-		
+		// Chamar função 
+		int returnValor = freqValor(num);
+				
+		// Exibe resultado da função
+		System.out.println("Frequência do valor "+num[4]+": "+returnValor);
 	}
 
 	// IMPLEMENTAÇÃO DE FUNÇÃO INCOMPLETA!
 	// Função que verifica quantidade de vezes que valor aparece
 	public static int freqValor(int[] resFunc) {
-		int resultado = 0;
 		int adicional = resFunc[4];
 		int contador = 0;
 		for (int i = 0; i < VALOR; i++) {
@@ -51,7 +44,6 @@ public class E09 {
 				contador++;
 			}
 		}
-
 		return contador;
 	}
 
