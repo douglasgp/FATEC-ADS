@@ -1,4 +1,4 @@
-package br.com.ilp010.aula22;
+package br.com.ilp010.aula21;
 
 public class Funcao02 {
 	public static void main(String[] args) {
