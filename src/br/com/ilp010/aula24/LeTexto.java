@@ -12,9 +12,9 @@ public class LeTexto {
 			String arquivo;
 			arquivo = scan.next();
 			// Biblioteca para uso da leitura e escrita
-			// BufferedReader é o duto, e a aplicação controla o arquivo pelo duto de
+			// BufferedReader ï¿½ o duto, e a aplicaï¿½ï¿½o controla o arquivo pelo duto de
 			// passagem.
-			BufferedReader br = new BufferedReader(new FileReader(arquivo + ".txt"));
+			BufferedReader br = new BufferedReader(new FileReader("src/br/com/ilp010/trabalho2/"+arquivo + ".txt"));
 			String linha;
 			int l = 1;
 			while ((linha = br.readLine()) != null) {
