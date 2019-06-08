@@ -25,7 +25,7 @@ public class LeituraTexto {
 			while((line = br.readLine()) != null) {
 				System.out.println(line);
 			}
-			System.out.println("=== Conteúdo ===");
+			System.out.println("=== Conteï¿½do ===");
 			br.close();
 			System.out.println("Arquivo '" + a[0] + "' fechado.");
 		} catch (Exception e) {

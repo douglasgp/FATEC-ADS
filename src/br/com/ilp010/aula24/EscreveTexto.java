@@ -7,7 +7,7 @@ public class EscreveTexto {
 	public static void main(String[] args) throws Exception{
 		PrintWriter pw = new PrintWriter(new FileWriter("arquivo2.txt"));
 		// PrintWriter pw = new PrintWriter(new FileWriter("arquivo2.txt"));
-		pw.println("Início do arquivo");
+		pw.println("InÃ­cio do arquivo");
 		for(int i = 0; i < 5; i++) {
 			pw.print(i);
 			pw.print(", ");
