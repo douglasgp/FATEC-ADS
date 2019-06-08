@@ -1,9 +1,9 @@
 package br.com.ilp010.aula30;
 /*
- * 1º. Declarar 3 matrizes
- * 2º. Ler valores para matriz A
- * 3º. Ler valores para matriz B
- * 4º. Soma matrizes onde:
+ * 1ï¿½. Declarar 3 matrizes
+ * 2ï¿½. Ler valores para matriz A
+ * 3ï¿½. Ler valores para matriz B
+ * 4ï¿½. Soma matrizes onde:
  * 	C[l][c] = A[[l][c] + B[[l][c]
  */
 
@@ -15,9 +15,9 @@ public class ConsolidaMatriz {
 	private static Scanner scan = new Scanner(System.in);
 
 	public static void main(String[] args) {
-		System.out.println("Informe o nº de linhas: ");
+		System.out.println("Informe o nÂº de linhas: ");
 		LINHAS = scan.nextInt();
-		System.out.println("Informe o nº de colunas: ");
+		System.out.println("Informe o nÂª de colunas: ");
 		COLUNAS = scan.nextInt();
 		// Criar matriz
 		int A[][] = new int[LINHAS][COLUNAS];
@@ -27,7 +27,7 @@ public class ConsolidaMatriz {
 		for (int nlin = 0; nlin < LINHAS; nlin++) {
 			// Estrutura para percorre as colunas da matriz
 			for (int ncol = 0; ncol < COLUNAS; ncol++) {
-				// Solicita do usuário valores da 1º matriz
+				// Solicita do usuÃ¡rio valores da 1Ãªs matriz
 				System.out.println("A[" + nlin + "][" + ncol + "]: ");
 				A[nlin][ncol] = scan.nextInt();
 			}
@@ -36,12 +36,12 @@ public class ConsolidaMatriz {
 		for(int nlin = 0; nlin < LINHAS; nlin++) {
 			// Estrura para percorrer as colunas da matriz
 			for(int ncol = 0; ncol < COLUNAS; ncol++) {
-				// Solicita do usuário valores da 2º matriz
+				// Solicita do usuï¿½rio valores da 2ï¿½ matriz
 				System.out.println("B["+nlin+"]["+ncol+"]: ");
 				B[nlin][ncol] = scan.nextInt();
 			}
 		}
-		// Soma valores correspondentes às posiçãos das duas matrizes: A + B
+		// Soma valores correspondentes ï¿½s posiï¿½ï¿½os das duas matrizes: A + B
 		for(int nlin = 0; nlin < LINHAS; nlin++) {
 			for(int ncol =0; ncol < COLUNAS; ncol++) {
 				res[nlin][ncol] = A[nlin][ncol] + B[nlin][ncol];
@@ -51,7 +51,7 @@ public class ConsolidaMatriz {
 		for (int nlin = 0; nlin < LINHAS; nlin++) {
 			// Estrutura para percorre as colunas da matriz
 			for (int ncol = 0; ncol < COLUNAS; ncol++) {
-				// Solicita do usuário valores da 1º matriz
+				// Solicita do usuï¿½rio valores da 1ï¿½ matriz
 				System.out.printf("%4d ", res[nlin][ncol]);
 			}
 			System.out.println("|");
