@@ -52,7 +52,7 @@ public class Catalogo {
 	// Função que mostra itens no cat�logo
 	public static void mostraCatalogo() throws IOException {
 		System.out.println("==============");
-        System.out.println("Cat�logo de Produtos");
+        System.out.println("Catálogo de Produtos");
         System.out.println("");
         DataInputStream dis = new DataInputStream(new FileInputStream("src/br/com/ilp010/trabalho2/catalogo01.db"));
         // Leitura do tamanho
@@ -63,25 +63,13 @@ public class Catalogo {
         String[] nome = new String[TAMANHO];
         double[] preco = new double[TAMANHO];
         String[] descricao = new String[TAMANHO];
-        // Apresenta Menu de op��es do Carrinho de Compras
+        // Apresenta Menu de opções do Carrinho de Compras
         System.out.println(" = = = = = = =  = = = = = = = MENU CARRINHO DE COMPRAS  = = = = = = =  = = = = = = = ");
-        System.out.printf("%14.13s | %-20.15s | %17.10s | %s\n", "1. Selecionar itens do carrinho", "2. Ver Carrinho","3. Excluir", "4. Voltar");
-        System.out.printf("%14.13s | %-20.6s | %17.10s | %s\n", "Item",          "de Compras",     "�tem",       "Menu Principal");
-        System.out.println("INFORME UMA OPÇÃO: ");
-        int op = scan.nextInt();
+        System.out.printf("%14.13s | %-20.15s | %17.10s | %s\n", "1. Escolher Produto", "2. Ver Carrinho","3. Excluir", "4. Voltar");
+        System.out.printf("%14.13s | %-20.6s | %17.10s | %s\n", "Item",          "de Compras",     "Item",       "Menu Principal");
 
-        if(op == 1){
-
-        }else if(op == 2){
-
-        }else if(op == 3){
-
-        }else if(op == 4){
-
-        }
-
-        // Leitura dos �tens do cat�logo
-		System.out.printf("%4.3s | %-20.8s | %7.9s | %s\n", "C�D", "NOME", "PRE�O", "DESCRI��O");
+        // Leitura dos Itens do catálogo
+		System.out.printf("%4.3s | %-20.8s | %7.9s | %s\n", "CÓD", "NOME", "PREÇO", "DESCRIÇÃO");
 		for(int i = 0; i < TAMANHO; i++) {
 			codigo[i] = dis.readInt();
 			nome[i] = dis.readUTF();
@@ -89,9 +77,10 @@ public class Catalogo {
 			descricao[i] = dis.readUTF();
 			System.out.printf("%04d | %-20s | %7.2f | %s\n", codigo[i], nome[i], preco[i], descricao[i]);
 		}
+		
 		int opcaoCarrinho = 0;
 		do {
-			// Apresenta menu de op��es
+			// Apresenta menu de opões
 			switch(opcaoCarrinho) {
 			case 1:
 				addItemCarrinho();
@@ -109,11 +98,12 @@ public class Catalogo {
 	}
 	// Função para adicionar item ao carrinho
 	public static void addItemCarrinho() {
-
-
+		System.out.println("Informe o código do produto: ");
+		
 	}
 	// Função para ver conteúdo do carrinho de compras
 	public static void verCarrinho() {
+		
 
 	}
 	// Função para remover itens do carrinho de compras
@@ -125,7 +115,7 @@ public class Catalogo {
         System.out.println("==============");
         System.out.println("Catálogo de Produtos");
         System.out.println();
-        System.out.println("A. Consulta de Itens");
+        System.out.println("A. Consulta Catálogo");
         System.out.println(" . Selecionar Itens Carrinho de Compras");
         System.out.println("C. Consultar Carrinho de Compras");
         System.out.println(" . Excluir itens");
