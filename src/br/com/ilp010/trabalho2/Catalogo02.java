@@ -7,46 +7,15 @@ import java.util.Scanner;
 
 public class Catalogo02 {
 
-	private static int NUM_PROD_CAR = 0;
+	public static int NUM_PROD_CAR = 0;
 	
-	private static int[] PROD_CAR = new int[20];
-	private static final int MAX_PROD_CAR = 4;
+	public static int[] PROD_CAR = new int[20];
+	public static final int MAX_PROD_CAR = 4;
 
-	private static final int MAX_QTD_PROD_CAR = 0;
+	public static final int MAX_QTD_PROD_CAR = 0;
 
-	private static int[] QTD_CAR = new int[20];
-	private static Scanner scan = new Scanner(System.in);
-
-	public static void main(String a[]) throws Exception {
-		int opcao = 0;
-		do {
-			// mostra menu de opões
-			opcao = menu();
-			// processa opção escolhida no menu
-			switch (opcao) {
-			case 1: //
-				mostraCatalogo();
-				break;
-			case 2: 
-				addItemCarrinho(); // ADICIONA item no carrinho
-				break;
-			case 3: //
-				consultaCarrinho();
-				break;
-			case 4: //
-				removeItemCarrinho();
-				break;
-			case 5: //
-				break;
-			case 0: //
-				sairAplicacao();
-				break;
-			default:
-				System.out.println("Operação Inválida!");
-			}
-		} while (opcao != 0); // repete enquanto opção diferente de sair
-
-	}
+	public static int[] QTD_CAR = new int[20];
+	public static Scanner scan = new Scanner(System.in);
 
 	// Função 0. FINALIZA aplicação
 	public static void sairAplicacao() {
@@ -128,13 +97,36 @@ public class Catalogo02 {
 	}
 
 	// função que exibe o menu principal
-	public static int menu() {
-		System.out.println(" = = = = = = = = = = = = = = = = = = = = =  MENU PRINCIPAL  = = = = = = = = = = = = = = = = = = = = = = = = = =  ");
-		System.out.printf("%14.12s | %-14.13s | %-20.25s | %-17.20s | %-17.10s |%s\n","1. Consultar ", "2. Adicionar ", "3. Consultar Carrinho","4. Remover Produto", "5. Menu", "0. Sair");
-		System.out.printf("%11.14s | %-11.15s | %-20.25s | %-17.18s | %-17.12s |%s\n","     Catálogo   ", "    Produto   ", "   de Compras        ","    do carrinho   ", "   Principal", "");
-		System.out.println(" = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = ");
-		
-		return scan.nextInt();
+	public static void menuPrincipal() throws Exception {
+		int opcao = 0;
+		do {
+			// mostra menu de opões
+			System.out.println(" = = = = = = = = = = = = = = = = = = = = =  MENU PRINCIPAL  = = = = = = = = = = = = = = = = = = = = = = = = = =  ");
+			System.out.printf("%14.12s | %-14.13s | %-20.25s | %-17.20s | %-17.10s |%s\n","1. Consultar ", "2. Adicionar ", "3. Consultar Carrinho","4. Remover Produto", "5. Menu", "0. Sair");
+			System.out.printf("%11.14s | %-11.15s | %-20.25s | %-17.18s | %-17.12s |%s\n","     Catálogo   ", "    Produto   ", "   de Compras        ","    do carrinho   ", "   Principal", "");
+			System.out.println(" = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = ");
+			
+			opcao = scan.nextInt();
+			// processa opção escolhida no menu
+			switch (opcao) {
+			case 1: //
+				mostraCatalogo();
+				break;
+			case 2: 
+				addItemCarrinho(); // ADICIONA item no carrinho
+				break;
+			case 3: //
+				consultaCarrinho();
+				break;
+			case 4: //
+				removeItemCarrinho();
+				break;
+			case 5: //
+				break;
+			default:
+				System.out.println("Operação Inválida!");
+			}
+		} while (opcao != 0); // repete enquanto opção diferente de sair
 	}
 
 	// Função LOCALIZAR produto
