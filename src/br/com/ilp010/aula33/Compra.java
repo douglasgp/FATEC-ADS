@@ -29,7 +29,7 @@ public class Compra {
 			System.out.println("Nome do Cliente? ");
 			String nome = scan.nextLine();
 			pw.println("<p>Cliente: " + nome + "</p>");
-			System.out.println("<p>Número do cartão? ");
+			System.out.println("<p>Número do cartão? </p>");
 			String cartao = scan.nextLine();
 			pw.println("<p>Cartão: " + cartao + "</p>");
 			System.out.println("Produtos no Carrinho: " + Carrinho.No_PROD_CARRINHO);
@@ -57,6 +57,7 @@ public class Compra {
 			Runtime.getRuntime().exec(new String[] { "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
 					"file:///C:\\Users\\NoteP000\\Documents\\NetBeansProjects\\Teste\\" + nomeArquivo + ".html" });
 			// Executar aplicação no Linux
+			
 
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
