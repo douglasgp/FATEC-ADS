@@ -54,9 +54,14 @@ public class Compra {
 			pw.println("</body></html>");
 			pw.close();
 			// Executar aplicação no Windows
-			Runtime.getRuntime().exec(new String[] { "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
+			/*
+			 * Runtime.getRuntime().exec(new String[] { "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
 					"file:///C:\\Users\\NoteP000\\Documents\\NetBeansProjects\\Teste\\" + nomeArquivo + ".html" });
+			 */
 			// Executar aplicação no Linux
+			Runtime.getRuntime().exec(new String[] { "//opt/google/chrome/google-chrome",
+					"file:///home/douglasgp/Public/"+nomeArquivo+".html" });
+			System.exit(0);
 			
 
 		} catch (Exception e) {
