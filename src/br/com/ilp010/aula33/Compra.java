@@ -22,6 +22,11 @@ public class Compra {
 			String nomeArquivo = String.format("P%06d", num);
 			// Escreve arquivo HTML
 			PrintWriter pw = new PrintWriter(new FileWriter(nomeArquivo + ".html"));
+			pw.println("<style>\n" + 
+					"table, th, td {\n" + 
+					"  border: 1px solid black;\n" + 
+					"}\n" + 
+					"</style>");
 			pw.println("<html><head>");
 			pw.println("<title>" + nomeArquivo + "</title>");
 			pw.println("</head><body>");
@@ -33,7 +38,7 @@ public class Compra {
 			String cartao = scan.nextLine();
 			pw.println("<p>Cartão: " + cartao + "</p>");
 			System.out.println("Produtos no Carrinho: " + Carrinho.No_PROD_CARRINHO);
-			pw.println("<tr><th>Cód</th><th>Preço</th><th>Qtd</th><th>SubTotal</th></tr>");
+			pw.println("<table style=\"width:100%\"><tr><th>Cód</th><th>Preço</th><th>Qtd</th><th>SubTotal</th></tr></table>");
 			int totalItens = 0;
 			double total = 0;
 			for (int i = 0; i < Carrinho.No_PROD_CARRINHO; i++) {
