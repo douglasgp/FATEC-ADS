@@ -50,7 +50,7 @@ public class CompraCatalogo {
 				pw.println("<td>Preço</td>");
 				pw.println("<td>" + Catalogo02.QTD_CAR[i] + "</td>");
 				totalItens += Catalogo02.QTD_CAR[i];
-				double subTotal = 1.5 * Catalogo02.QTD_CAR[i];
+				double subTotal = Catalogo02.PRECO_CAR[i] * Catalogo02.QTD_CAR[i];
 				total += subTotal;
 				pw.print("<td>" + String.format("R$%.2f", subTotal) + "</td>");
 				pw.println("</tr>");
