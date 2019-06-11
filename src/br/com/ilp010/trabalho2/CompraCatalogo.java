@@ -21,8 +21,11 @@ public class CompraCatalogo {
 		try {
 			String nomeArquivo = String.format("P%06d", num);
 			// Escreve arquivo HTML
-			PrintWriter pw = new PrintWriter(new FileWriter("/home/douglasgp/Public/"+nomeArquivo + ".html"));
+			PrintWriter pw = new PrintWriter(new FileWriter("/home/douglasgp/Público/"+nomeArquivo + ".html"));
 			pw.println("<html><head>");
+			pw.println("<style>table, th, td {\n" + 
+					"  border: 1px solid black;\n" + 
+					"}</style>");
 			pw.println("<title>" + nomeArquivo + "</title>");
 			pw.println("</head><body>");
 			pw.println("<h1>Pedido: " + nomeArquivo + "</h1>");
@@ -33,24 +36,30 @@ public class CompraCatalogo {
 			String cartao = scan.nextLine();
 			pw.println("<p>Cartão: " + cartao + "</p>");
 			System.out.println("Produtos no Carrinho: " + Catalogo02.NUM_PROD_CAR);
-			pw.println("<tr><th>Cód</th><th>Preço</th><th>Qtd</th><th>SubTotal</th></tr>");
+			pw.println("<table><tr>\n" + 
+					"  <th>Cód</th>\n" + 
+					"  <th>Preço</th>\n" + 
+					"  <th>Qtd</th>\n" + 
+					"  <th>SubTotal</th>\n" + 
+					"</tr>");
 			int totalItens = 0;
 			double total = 0;
 			for (int i = 0; i < Catalogo02.NUM_PROD_CAR; i++) {
 				pw.println("<tr>");
-				pw.println("<td>" + Catalogo02.PROD_CAR[i]);
+				pw.println("<td>" + Catalogo02.PROD_CAR[i] + "</td>");
 				pw.println("<td>Preço</td>");
-				pw.println("<td>" + Catalogo02.PROD_CAR[i]);
+				pw.println("<td>" + Catalogo02.QTD_CAR[i] + "</td>");
 				totalItens += Catalogo02.QTD_CAR[i];
 				double subTotal = 1.5 * Catalogo02.QTD_CAR[i];
 				total += subTotal;
-				pw.print("<td>" + String.format("R$%.2f", total) + "</p>");
+				pw.print("<td>" + String.format("R$%.2f", subTotal) + "</td>");
 				pw.println("</tr>");
 				System.out.printf("%2d %06d R$%.2f\n", i, Catalogo02.PROD_CAR[i], subTotal);
 			}
 			pw.println("</table>");
-			pw.println("<p>Total de Produtos: " + Catalogo02.NUM_PROD_CAR + "<p>");
+			pw.println("<p>Total de Produtos: " + Catalogo02.NUM_PROD_CAR + "</p>");
 			pw.println("<p>Total de Itens: " + totalItens + "</p>");
+            pw.println("<P>Total Valor: " + String.format("R$%.2f",total) + "</p>");
 			pw.println("</body></html>");
 			pw.close();
 			// Executar aplicação no Windows
@@ -60,7 +69,7 @@ public class CompraCatalogo {
 			 */
 			// Executar aplicação no Linux
 			Runtime.getRuntime().exec(new String[] { "/opt/google/chrome/google-chrome",
-					"file:/home/douglasgp/Public/"+nomeArquivo+".html" });
+					"file:/home/douglasgp/Público/"+nomeArquivo+".html" });
 			System.exit(0);
 			
 
