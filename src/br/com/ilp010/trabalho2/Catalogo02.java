@@ -6,15 +6,13 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Catalogo02 {
-
-	public static int NUM_PROD_CAR = 0;
+	public static final int MAX_PROD_CAR = 4;
+	public static final int MAX_QTD_PROD_CAR = 0;
 	
 	public static int[] PROD_CAR = new int[20];
-	public static final int MAX_PROD_CAR = 4;
-
-	public static final int MAX_QTD_PROD_CAR = 0;
-
 	public static int[] QTD_CAR = new int[20];
+	public static int NUM_PROD_CAR = 0;
+	
 	public static Scanner scan = new Scanner(System.in);
 
 	// Função 0. FINALIZA aplicação
@@ -103,8 +101,8 @@ public class Catalogo02 {
 		do {
 			// mostra menu de opões
 			System.out.println(" = = = = = = = = = = = = = = = = = = = = =  MENU PRINCIPAL  = = = = = = = = = = = = = = = = = = = = = = = = = =  ");
-			System.out.printf("%14.12s | %-14.13s | %-20.25s | %-17.20s | %-17.10s |%s\n","1. Consultar ", "2. Adicionar ", "3. Consultar Carrinho","4. Remover Produto", "5. Menu", "0. Sair");
-			System.out.printf("%11.14s | %-11.15s | %-20.25s | %-17.18s | %-17.12s |%s\n","     Catálogo   ", "    Produto   ", "   de Compras        ","    do carrinho   ", "   Principal", "");
+			System.out.printf("%14.12s | %-14.13s | %-20.25s | %-17.20s | %-17.10s |%s\n","1. Consultar ", "2. Adicionar ", "3. Consultar Carrinho","4. Remover Produto", "5. Sair da ", "0. Finalizar");
+			System.out.printf("%11.14s | %-11.15s | %-20.25s | %-17.18s | %-17.12s |%s\n","     Catálogo   ", "    Produto   ", "   de Compras        ","    do carrinho   ", "   aplicação", " Compra");
 			System.out.println(" = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = ");
 			
 			opcao = scan.nextInt();
@@ -123,6 +121,7 @@ public class Catalogo02 {
 				removeItemCarrinho();
 				break;
 			case 5: //
+				sairAplicacao();
 				break;
 			default:
 				System.out.println("Operação Inválida!");
