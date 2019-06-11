@@ -82,7 +82,7 @@ public class CompraCatalogo {
 	public static int leAtualizaNumPedido() {
 		try {
 			// Lê arquivo de controle
-			BufferedReader br = new BufferedReader(new FileReader("pedido.txt"));
+			BufferedReader br = new BufferedReader(new FileReader("/home/douglasgp/Público/pedido.txt"));
 			String stg = br.readLine();
 			br.close();
 			// Número do último pedido
@@ -90,7 +90,7 @@ public class CompraCatalogo {
 			// Número do pedido atual
 			num++;
 			// Escreve arquivo de controle
-			PrintWriter pw = new PrintWriter(new FileWriter("pedido.txt"));
+			PrintWriter pw = new PrintWriter(new FileWriter("/home/douglasgp/Público/pedido.txt"));
 			pw.println(num);
 			pw.close();
 			// número do pedido atual
