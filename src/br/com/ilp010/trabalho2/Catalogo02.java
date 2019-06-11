@@ -87,6 +87,7 @@ public class Catalogo02 {
 			System.out.println(QTD_CAR[i] + " de " + PROD_CAR[i]);
 			num_itens += QTD_CAR[i];
 		}
+		
 		System.out.println("Nº Itens: " + num_itens);
 		System.out.println("= = = = = = = = = = = = = = = = = = = = = = = =");
 	}
