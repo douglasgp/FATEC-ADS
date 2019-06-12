@@ -9,8 +9,8 @@
 	<classpathentry exported="true" kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="WebContent/WEB-INF/lib/mysql-connector-java-5.1.39-bin.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Douglas/Downloads/ext-1.1.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Douglas/Downloads/jep.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Douglas/Downloads/jcalc.jar"/>
+	<classpathentry kind="lib" path="/home/douglasgp/git/FATEC-ADS/WebContent/WEB-INF/lib/ext-1.1.1.jar"/>
+	<classpathentry kind="lib" path="/home/douglasgp/git/FATEC-ADS/WebContent/WEB-INF/lib/jep.jar"/>
+	<classpathentry kind="lib" path="/home/douglasgp/git/FATEC-ADS/WebContent/WEB-INF/lib/jcalc.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

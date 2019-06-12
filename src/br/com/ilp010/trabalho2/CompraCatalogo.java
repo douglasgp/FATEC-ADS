@@ -21,12 +21,10 @@ public class CompraCatalogo {
 		try {
 			String nomeArquivo = String.format("P%06d", num);
 			// Escreve arquivo HTML
-			PrintWriter pw = new PrintWriter(new FileWriter("/home/douglasgp/Público/"+nomeArquivo + ".html"));
+			PrintWriter pw = new PrintWriter(new FileWriter("/home/douglasgp/git/FATEC-ADS/src/br/com/ilp010/trabalho2/Pedidos/"+nomeArquivo + ".html"));
 			pw.println("<html><head>");
-			pw.println("<style>table, th, td {\n" + 
-					"  border: 1px solid black;\n" + 
-					"}</style>");
 			pw.println("<title>" + nomeArquivo + "</title>");
+			pw.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"estilo2.css\" />");
 			pw.println("</head><body>");
 			pw.println("<h1>Pedido: " + nomeArquivo + "</h1>");
 			System.out.println("Nome do Cliente? ");
@@ -36,12 +34,9 @@ public class CompraCatalogo {
 			String cartao = scan.nextLine();
 			pw.println("<p>Cartão: " + cartao + "</p>");
 			System.out.println("Produtos no Carrinho: " + Catalogo02.NUM_PROD_CAR);
-			pw.println("<table><tr>\n" + 
-					"  <th>Cód</th>\n" + 
-					"  <th>Preço</th>\n" + 
-					"  <th>Qtd</th>\n" + 
-					"  <th>SubTotal</th>\n" + 
-					"</tr>");
+			/*
+			pw.println("<table><tr><th>Cód</th><th>Preço</th><th>Qtd</th><th>SubTotal</th></tr>");
+			*/
 			int totalItens = 0;
 			double total = 0;
 			for (int i = 0; i < Catalogo02.NUM_PROD_CAR; i++) {
@@ -50,7 +45,7 @@ public class CompraCatalogo {
 				pw.println("<td>Preço</td>");
 				pw.println("<td>" + Catalogo02.QTD_CAR[i] + "</td>");
 				totalItens += Catalogo02.QTD_CAR[i];
-				double subTotal = 1.5 * Catalogo02.QTD_CAR[i];
+				double subTotal = Catalogo02.PRECO_CAR[i] * Catalogo02.QTD_CAR[i];
 				total += subTotal;
 				pw.print("<td>" + String.format("R$%.2f", subTotal) + "</td>");
 				pw.println("</tr>");
@@ -69,7 +64,7 @@ public class CompraCatalogo {
 			 */
 			// Executar aplicação no Linux
 			Runtime.getRuntime().exec(new String[] { "/opt/google/chrome/google-chrome",
-					"file:/home/douglasgp/Público/"+nomeArquivo+".html" });
+					"file:/home/douglasgp/git/FATEC-ADS/src/br/com/ilp010/trabalho2/Pedidos/"+nomeArquivo+".html" });
 			System.exit(0);
 			
 
@@ -82,7 +77,7 @@ public class CompraCatalogo {
 	public static int leAtualizaNumPedido() {
 		try {
 			// Lê arquivo de controle
-			BufferedReader br = new BufferedReader(new FileReader("/home/douglasgp/Público/pedido.txt"));
+			BufferedReader br = new BufferedReader(new FileReader("/home/douglasgp/git/FATEC-ADS/src/br/com/ilp010/trabalho2/pedido.txt"));
 			String stg = br.readLine();
 			br.close();
 			// Número do último pedido
@@ -90,7 +85,7 @@ public class CompraCatalogo {
 			// Número do pedido atual
 			num++;
 			// Escreve arquivo de controle
-			PrintWriter pw = new PrintWriter(new FileWriter("/home/douglasgp/Público/pedido.txt"));
+			PrintWriter pw = new PrintWriter(new FileWriter("/home/douglasgp/git/FATEC-ADS/src/br/com/ilp010/trabalho2/pedido.txt"));
 			pw.println(num);
 			pw.close();
 			// número do pedido atual

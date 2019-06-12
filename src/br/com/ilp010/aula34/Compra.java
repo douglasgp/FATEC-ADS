@@ -18,7 +18,7 @@ import java.util.Scanner;
  */
 public class Compra {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Carrinho.menuCarrinho();
         int num = leEAtualizaNumeroPedido();
         System.out.println("Num Atual: " + num);
@@ -31,7 +31,7 @@ public class Compra {
             //
             String nomeArquivo = String.format("P%06d", num);
             // Escreve arquivo HTML
-            PrintWriter pw = new PrintWriter(new FileWriter(nomeArquivo + ".html"));
+            PrintWriter pw = new PrintWriter(new FileWriter("/home/douglasgp/Público/"+nomeArquivo + ".html"));
             pw.println("<HTML><HEAD>");
             pw.println("<TITLE>" + nomeArquivo + "</TITLE>");
             pw.println("</HEAD><BODY>");
@@ -53,7 +53,7 @@ public class Compra {
                 pw.print("<TD>Preço</TD>");
                 pw.print("<TD>" + Carrinho.QUANT_CARRINHO[i] + "</TD>");
                 totalItens += Carrinho.QUANT_CARRINHO[i];
-                double subTotal = 1.5 * Carrinho.QUANT_CARRINHO[i];
+                double subTotal = Carrinho.PRECO_CARRINHO[i] * Carrinho.QUANT_CARRINHO[i];
                 total += subTotal;
                 pw.print("<TD>" + String.format("R$%.2f",subTotal) + "</TD>");
                 pw.println("</TR>");
@@ -65,10 +65,15 @@ public class Compra {
             pw.println("<P>Total Valor: " + String.format("R$%.2f",total) + "</P>");
             pw.println("</BODY></HTML>");
             pw.close();
+            /*
             Runtime.getRuntime().exec(
                     new String[]{
                         "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
                         "file:///C:\\Users\\NoteP000\\Documents\\NetBeansProjects\\Teste\\" + nomeArquivo + ".html"});
+                        */
+            Runtime.getRuntime().exec(new String[] { "/opt/google/chrome/google-chrome",
+					"file:/home/douglasgp/Público/"+nomeArquivo+".html" });
+			System.exit(0);
         } catch (Exception exc) {
             System.out.println(exc.getMessage());
         }
@@ -77,14 +82,14 @@ public class Compra {
     public static int leEAtualizaNumeroPedido() {
         try {
             // Lê arquivo de controle
-            BufferedReader br = new BufferedReader(new FileReader("pedido.txt"));
+            BufferedReader br = new BufferedReader(new FileReader("/home/douglasgp/Público/pedido.txt"));
             String str = br.readLine();
             br.close();
             //
             int num = Integer.parseInt(str); // número do último pedido
             num++; // número do pedido ATUAL
             // Escreve arquivo de controle
-            PrintWriter pw = new PrintWriter(new FileWriter("pedido.txt"));
+            PrintWriter pw = new PrintWriter(new FileWriter("/home/douglasgp/Público/pedido.txt"));
             pw.println(num);
             pw.close();
             //
