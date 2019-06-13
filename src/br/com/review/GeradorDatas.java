@@ -8,27 +8,30 @@ import java.util.Scanner;
 
 public class GeradorDatas {
 	public static Scanner scan = new Scanner(System.in);
-	public static Date NUM_LIN = 3;
-	public static int NUM_COL = 3;
-	public static int y = 2019;
 	public static int totalAula = 0;
-	public static int NUM_DISCIPLINA = 9;
-	public static Date dataAulas[][] = new int[NUM_LIN][NUM_COL];
-	public static String disciplina[][] = new String[NUM_DISCIPLINA][];
+	public static int NUM_DISCIPLINA = 3;
+	public static int NUM_LIN = NUM_DISCIPLINA;
+	public static int NUM_COL = 3;
+	public static int dataAulas[][] = new int[NUM_LIN][NUM_COL];
 
 	public static void menuPrincipal() throws Exception {
-DateFormat f = DateFormat.getDateInstance();
-		
-		System.out.println("Infome data: ");
-		Date data2 = f.parse("12/01/1995");
+		String disciplina[] = {"MCA002","MET100","LIN200"};
+				//,"ISO100","ILP502","ILP010","IHW100","IES100","CCG006"};
+		//Date[][] DATAS1= new Date[NUM_LIN][NUM_COL];
+		Date[][] DATAS1 = {{2/8/2019,2/8/2019,2/8/2019},{2/8/2019,2/8/2019,2/8/2019}};
+		DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+
 		for (int l = 0; l < NUM_LIN; l++) {
-			for (int c = 0; c < l; c++) {
-				dataAulas[l][c] = data2;
+			System.out.println(" = = = "+ disciplina[l]+" = = = ");
+			for (int c = 0; c < NUM_COL; c++) {
+				System.out.println("Informe "+(c+1)+"º data: ");
+				String dataStr = scan.nextLine();
+				DATAS1[l][c] = df.parse(dataStr);
 			}
 		}
 		for (int l = 0; l < NUM_LIN; l++) {
 			for (int c = 0; c < l; c++) {
-				System.out.println(dataAulas[l][c]);
+				System.out.println(df.format(DATAS1[l][c]));
 			}
 		}
 
