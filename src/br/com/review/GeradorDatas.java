@@ -15,23 +15,27 @@ public class GeradorDatas {
 	public static int dataAulas[][] = new int[NUM_LIN][NUM_COL];
 
 	public static void menuPrincipal() throws Exception {
-		String disciplina[] = {"MCA002","MET100","LIN200"};
-				//,"ISO100","ILP502","ILP010","IHW100","IES100","CCG006"};
-		//Date[][] DATAS1= new Date[NUM_LIN][NUM_COL];
-		Date[][] DATAS1 = {{2/8/2019,2/8/2019,2/8/2019},{2/8/2019,2/8/2019,2/8/2019}};
+		String[] dataStr = { "2/11/2019", "2/18/2019", "2/25/2019", "3/4/2019", "3/11/2019", "3/18/2019", "3/25/2019",
+				"4/1/2019", "4/8/2019", "4/15/2019", "4/22/2019", "4/29/2019", "5/6/2019", "5/13/2019", "5/20/2019",
+				"5/27/2019", "6/3/2019", "6/10/2019", "6/17/2019", "6/24/2019" };
+		String disciplina[] = { "MCA002", "MET100", "LIN200" };
+		// ,"ISO100","ILP502","ILP010","IHW100","IES100","CCG006"};
+		// Date[][] DATAS1= new Date[NUM_LIN][NUM_COL];
+		Date[] datas = { new Date(), new Date() };
+		// {{2/8/2019,2/8/2019,2/8/2019},{2/8/2019,2/8/2019,2.8.2019}};
 		DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
 
 		for (int l = 0; l < NUM_LIN; l++) {
-			System.out.println(" = = = "+ disciplina[l]+" = = = ");
+			System.out.println(" = = = " + disciplina[l] + " = = = ");
 			for (int c = 0; c < NUM_COL; c++) {
-				System.out.println("Informe "+(c+1)+"º data: ");
-				String dataStr = scan.nextLine();
-				DATAS1[l][c] = df.parse(dataStr);
+				System.out.println("Informe data da " + (c + 1) + "º aula: ");
+				dataStr = scan.nextLine();
+
 			}
 		}
 		for (int l = 0; l < NUM_LIN; l++) {
 			for (int c = 0; c < l; c++) {
-				System.out.println(df.format(DATAS1[l][c]));
+				System.out.println(novaData.format(datas[l][c]));
 			}
 		}
 

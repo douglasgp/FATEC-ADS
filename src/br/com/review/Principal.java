@@ -11,8 +11,8 @@ public class Principal {
 			// mostra menu de opões
 
 			System.out.println(" = = = = = = = = = = = = = = = = = = = = =  MENU PRINCIPAL  = = = = = = = = = = = = = = = = = = = = = = = = = =  ");
-			System.out.printf("%14.12s | %-14.13s | %-20.25s | %-17.20s | %-17.10s |%s\n","1. Registrar ", "2. Menu ", "3. Consultar Carrinho","4. Remover Produto", "5. Sair da ", "0. Finalizar");
-			System.out.printf("%11.14s | %-11.15s | %-20.25s | %-17.18s | %-17.12s |%s\n","  data de revisão   ", "    Principal   ", "   de Compras        ","    do carrinho   ", "   aplicação", " Compra");
+			System.out.printf("%14.12s | %-14.17s | %-20.25s | %-17.20s | %-17.10s |%s\n","1. Registrar ", "2. Registar datas ", "3. Consultar Carrinho","4. Remover Produto", "5. Sair da ", "0. Finalizar");
+			System.out.printf("%11.14s | %-11.19s | %-20.25s | %-17.18s | %-17.12s |%s\n","  data de revisão   ", "  de aulas     ", "   de Compras        ","    do carrinho   ", "   aplicação", " Compra");
 			System.out.println(" = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = ");
 			
 			opcao = scan.nextInt();
