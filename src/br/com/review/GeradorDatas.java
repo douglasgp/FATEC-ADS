@@ -29,13 +29,13 @@ public class GeradorDatas {
 			System.out.println(" = = = " + disciplina[l] + " = = = ");
 			for (int c = 0; c < NUM_COL; c++) {
 				System.out.println("Informe data da " + (c + 1) + "º aula: ");
-				dataStr = scan.nextLine();
+				// dataStr = scan.nextLine();
 
 			}
 		}
 		for (int l = 0; l < NUM_LIN; l++) {
 			for (int c = 0; c < l; c++) {
-				System.out.println(novaData.format(datas[l][c]));
+				// System.out.println(novaData.format(datas[l][c]));
 			}
 		}
 
