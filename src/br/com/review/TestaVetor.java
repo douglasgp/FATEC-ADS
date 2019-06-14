@@ -18,18 +18,24 @@ public class TestaVetor {
 		String vetorDataStr[] = {"02/01/2019", "09/01/2019","16/01/2019"};
 
 		SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+		int cont = 0;
 
 		for (int l = 0; l < numAulas; l++) {
 			System.out.println(" = = = " + (l+1) + "º aula: " + (vetorDataStr[l])+" = = = ");
 			for (int c = 0; c < numAulas; c++) {
 				Calendar cal = Calendar.getInstance();
 				cal.setTime(df.parse(vetorDataStr[c]));
-				if (c == 0) {
-					vetorData[c].add(Calendar.DAY_OF_MONTH, 0);
+				if (c == 1) {
+					int rev1 = 0;				
+					vetorData[rev1].add(Calendar.DAY_OF_MONTH, rev1);
 					System.out.println("Posição " + c + ": " + vetorDataStr[c]);
-				} else if (c == 1) {
+				} else if (c == 2) {
+					int rev2 = 1;
+					vetorData[rev2].add(Calendar.DAY_OF_MONTH, rev2);
 					System.out.println("Posição " + c+ ": " + vetorDataStr[c]);
-				}else if(c == 2) {
+				}else if(c == cont) {
+					int rev3 = 1;
+					vetorData[c].add(Calendar.DAY_OF_MONTH, rev3);
 					System.out.println("Posição " + c+ ": " + vetorDataStr[c]);
 				}
 			}
