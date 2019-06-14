@@ -5,6 +5,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Scanner;
 
+import br.com.ilp010.aula34.Carrinho;
+
 public class Catalogo02 {
 
 	public static final int MAX_PROD_CAR = 4;
@@ -14,7 +16,7 @@ public class Catalogo02 {
 	public static int[] PROD_CAR = new int[20];
 	public static double PRECO_CAR[] = new double[20];
 	public static int[] QTD_CAR = new int[20];
-	
+
 	public static Scanner scan = new Scanner(System.in);
 
 	// Função 0. FINALIZA aplicação
@@ -53,31 +55,29 @@ public class Catalogo02 {
 		System.out.println("Adicionar No Carrinho");
 		// ler produto
 		System.out.print("Código? ");
-		int cod = scan.nextInt();
+		int codigo = scan.nextInt();
 		// verificar se tem o (codigo do) produto no carrinho
-		int posicaoProd = localizaProd(cod);
+		int posicaoProduto = localizaProd(codigo);
 
-		if (posicaoProd == -1) {
-			// produto não encontrado
-			// verifico se cabe mais produto no carrinho
+		if (posicaoProduto == -1) {
 			if (NUM_PROD_CAR == MAX_PROD_CAR) {
 				System.out.println("Carrinho cheio!!!");
 				return;
 			}
 			// cabe mais um produto
-			PROD_CAR[NUM_PROD_CAR] = cod;
+			PROD_CAR[NUM_PROD_CAR] = codigo;
 			QTD_CAR[NUM_PROD_CAR]++;
-			PRECO_CAR[NUM_PROD_CAR] = obterPreco(cod);
+			PRECO_CAR[NUM_PROD_CAR] = obterPreco(codigo);
 			NUM_PROD_CAR++;
 		} else {
 			// produto encontrado
 			// verifico se pode mais uma unidade
-			if (QTD_CAR[posicaoProd] == MAX_QTD_PROD_CAR) {
+			if (QTD_CAR[posicaoProduto] == MAX_QTD_PROD_CAR) {
 				System.out.println("Máximo no carrinho!!!");
 				return;
 			}
 			// pode mais uma unidade
-			QTD_CAR[posicaoProd]++;
+			QTD_CAR[posicaoProduto]++;
 		}
 	}
 
@@ -88,18 +88,44 @@ public class Catalogo02 {
 		System.out.println("Nº Produtos: " + NUM_PROD_CAR);
 		System.out.println("= = = = = = = = = = = = = = = = = = = = = = = =");
 		int num_itens = 0;
+		double subTotal = 0;
+		double total = 0;
+		
 		for (int i = 0; i < NUM_PROD_CAR; i++) {
 			System.out.println(QTD_CAR[i] + " de " + PROD_CAR[i]);
 			num_itens += QTD_CAR[i];
+			
+			subTotal = PRECO_CAR[i] * Carrinho.QUANT_CARRINHO[i];
+            total += subTotal;
 		}
 
 		System.out.println("Nº Itens: " + num_itens);
+		System.out.println("Total: R$ " + total);
 		System.out.println("= = = = = = = = = = = = = = = = = = = = = = = =");
 	}
 
 	// Função 4. REMOVE iten carrinho
 	public static void removeItemCarrinho() {
-
+		System.out.println("Remover do Carrinho.");
+		// ler produto
+		System.out.print("Digite o Código do Produto. ");
+		int codigo = scan.nextInt();
+		// verificar se tem o (codigo do) produto no carrinho
+		int posicaoProduto = localizaProd(codigo);
+		if (posicaoProduto != -1) {
+			// achou produto, diminui quantidade
+			QTD_CAR[posicaoProduto]--;
+			if (QTD_CAR[posicaoProduto] == 0) {
+				// remover produto zerado
+				for (int j = posicaoProduto; j < NUM_PROD_CAR - 1; j++) {
+					QTD_CAR[j] = QTD_CAR[j + 1];
+					PROD_CAR[j] = PROD_CAR[j + 1];
+					NUM_PROD_CAR--;
+				}
+			} else {
+				System.out.println("Produto não encontrado");
+			}
+		}
 	}
 
 	// Função SAIR da aplicação
@@ -114,11 +140,15 @@ public class Catalogo02 {
 		do {
 			// mostra menu de opões
 
-			System.out.println(" = = = = = = = = = = = = = = = = = = = = =  MENU PRINCIPAL  = = = = = = = = = = = = = = = = = = = = = = = = = =  ");
-			System.out.printf("%14.12s | %-14.13s | %-20.25s | %-17.20s | %-17.10s |%s\n","1. Consultar ", "2. Adicionar ", "3. Consultar Carrinho","4. Remover Produto", "5. Sair da ", "0. Finalizar");
-			System.out.printf("%11.14s | %-11.15s | %-20.25s | %-17.18s | %-17.12s |%s\n","     Catálogo   ", "    Produto   ", "   de Compras        ","    do carrinho   ", "   aplicação", " Compra");
-			System.out.println(" = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = ");
-			
+			System.out.println(
+					" = = = = = = = = = = = = = = = = = = = = =  MENU PRINCIPAL  = = = = = = = = = = = = = = = = = = = = = = = = = =  ");
+			System.out.printf("%14.12s | %-14.13s | %-20.25s | %-17.20s | %-17.10s |%s\n", "1. Consultar ",
+					"2. Adicionar ", "3. Consultar Carrinho", "4. Remover Produto", "5. Sair da ", "0. Finalizar");
+			System.out.printf("%11.14s | %-11.15s | %-20.25s | %-17.18s | %-17.12s |%s\n", "     Catálogo   ",
+					"    Produto   ", "   de Compras        ", "    do carrinho   ", "   aplicação", " Compra");
+			System.out.println(
+					" = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = ");
+
 			opcao = scan.nextInt();
 			// processa opção escolhida no menu
 			switch (opcao) {
@@ -170,7 +200,7 @@ public class Catalogo02 {
 			nome[i] = dis.readUTF();
 			preco[i] = dis.readDouble();
 			descricao[i] = dis.readUTF();
-			if(cod == codigo[i])
+			if (cod == codigo[i])
 				rPreco = preco[i];
 		}
 		return rPreco;

@@ -31,7 +31,7 @@ public class Compra {
             //
             String nomeArquivo = String.format("P%06d", num);
             // Escreve arquivo HTML
-            PrintWriter pw = new PrintWriter(new FileWriter("/home/douglasgp/Público/"+nomeArquivo + ".html"));
+            PrintWriter pw = new PrintWriter(new FileWriter("/home/douglasgp/Public/"+nomeArquivo + ".html"));
             pw.println("<HTML><HEAD>");
             pw.println("<TITLE>" + nomeArquivo + "</TITLE>");
             pw.println("</HEAD><BODY>");
@@ -47,13 +47,14 @@ public class Compra {
             pw.println("<TR><TH>Cod</TH><TH>Preço</TH><TH>Quant</TH><TH>SubTotal</TH></TR>");
             int totalItens = 0;
             double total = 0;
+            double subTotal = 0;
             for (int i = 0; i < Carrinho.No_PROD_CARRINHO; i++) {
                 pw.print("<TR>");
                 pw.print("<TD>" + Carrinho.PROD_CARRINHO[i] + "</TD>");
-                pw.print("<TD>Preço</TD>");
+                pw.print("<TD>"+ Carrinho.PRECO_CARRINHO[i] +"</TD>");
                 pw.print("<TD>" + Carrinho.QUANT_CARRINHO[i] + "</TD>");
                 totalItens += Carrinho.QUANT_CARRINHO[i];
-                double subTotal = Carrinho.PRECO_CARRINHO[i] * Carrinho.QUANT_CARRINHO[i];
+                subTotal = Carrinho.PRECO_CARRINHO[i] * Carrinho.QUANT_CARRINHO[i];
                 total += subTotal;
                 pw.print("<TD>" + String.format("R$%.2f",subTotal) + "</TD>");
                 pw.println("</TR>");
@@ -72,7 +73,7 @@ public class Compra {
                         "file:///C:\\Users\\NoteP000\\Documents\\NetBeansProjects\\Teste\\" + nomeArquivo + ".html"});
                         */
             Runtime.getRuntime().exec(new String[] { "/opt/google/chrome/google-chrome",
-					"file:/home/douglasgp/Público/"+nomeArquivo+".html" });
+					"file:/home/douglasgp/Public/"+nomeArquivo+".html" });
 			System.exit(0);
         } catch (Exception exc) {
             System.out.println(exc.getMessage());
@@ -82,14 +83,14 @@ public class Compra {
     public static int leEAtualizaNumeroPedido() {
         try {
             // Lê arquivo de controle
-            BufferedReader br = new BufferedReader(new FileReader("/home/douglasgp/Público/pedido.txt"));
+            BufferedReader br = new BufferedReader(new FileReader("/home/douglasgp/Public/pedido.txt"));
             String str = br.readLine();
             br.close();
             //
             int num = Integer.parseInt(str); // número do último pedido
             num++; // número do pedido ATUAL
             // Escreve arquivo de controle
-            PrintWriter pw = new PrintWriter(new FileWriter("/home/douglasgp/Público/pedido.txt"));
+            PrintWriter pw = new PrintWriter(new FileWriter("/home/douglasgp/Public/pedido.txt"));
             pw.println(num);
             pw.close();
             //

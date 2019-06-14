@@ -129,11 +129,20 @@ public class Carrinho {
 		System.out.println("NoProdutos: " + No_PROD_CARRINHO);
 		System.out.println("==================");
 		int no_itens = 0;
+		double subTotal = 0;
+		double total = 0;
+		int totalItens = 0;
 		for (int i = 0; i < No_PROD_CARRINHO; i++) {
 			System.out.println(QUANT_CARRINHO[i] + " de " + PROD_CARRINHO[i]);
 			no_itens += QUANT_CARRINHO[i];
+			
+			totalItens += QUANT_CARRINHO[i];
+            subTotal = PRECO_CARRINHO[i] * Carrinho.QUANT_CARRINHO[i];
+            total += subTotal;
 		}
+		
 		System.out.println("NoItens: " + no_itens);
+		System.out.println("Total: R$ " + total);
 		System.out.println("==================");
 	}
 

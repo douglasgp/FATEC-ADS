@@ -1,5 +1,7 @@
 package br.com.review;
-
+/*
+ * https://www.devmedia.com.br/forum/somar-10-dias-a-uma-data/565299
+ */
 import java.util.Scanner;
 
 public class Principal {
