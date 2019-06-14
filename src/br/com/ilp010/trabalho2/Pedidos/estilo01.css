@@ -1,15 +1,21 @@
 table {
-  font-family: arial, sans-serif;
-  border-collapse:  inherit;
-  width: 50%;
+  width:100%;
 }
-
-td , th{
-  border: 1px solid Tomato;
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
   text-align: left;
-  padding: 8px;
 }
-
-tr:nth-child(even) {
-  background-color: #dddddd;
+table.names tr:nth-child(even) {
+  background-color: #eeee;
+}
+table.names tr:nth-child(odd) {
+  background-color:#ffff;
+}
+table.names th {
+  background-color: black;
+  color: white;
 }
