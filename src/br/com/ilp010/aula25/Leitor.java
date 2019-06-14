@@ -5,8 +5,8 @@ import java.io.FileInputStream;
 
 public class Leitor {
 	public static void main(String[] args) throws Exception {
-		// Abrir catálogo
-		DataInputStream dis = new DataInputStream(new FileInputStream("produto.db"));
+		// Abrir catï¿½logo
+		DataInputStream dis = new DataInputStream(new FileInputStream("/src/br/com/pet/pedido/produto.db"));
 		// Leitura do tamanho
 		int TAMANHO = dis.readInt();
 		System.out.println("Tamanho " + TAMANHO);
