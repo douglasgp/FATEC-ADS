@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Calendário de Revisão</title>
+<title>Formulário Revisão</title>
 <link rel="stylesheet" type="text/css" href="estilo2.css" />
 </head>
 <body>
@@ -37,11 +37,27 @@
 		<li style="float: right"><a href="about.html">About</a></li>
 	</ul>
 	<header>
-		<h2>Programação de Revisão</h2>
+		<h2>Formulário de Revisão</h2>
 	</header>
-	<div>
-		<iframe width="1030" height="900" grameborder="0" scrooling="no"
-			src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTkXZ5VQ7rOwK7r3UdUdd86Tn-9GNxOyP-qXhOEoa-BeOhZOaxrxZwLolcEJMlbHMVM2PSOawNsAzCx/pubhtml?gid=311960660&amp;single=true&amp;widget=false&amp;headers=false"></iframe>
-	</div>
+	<section>
+		<article>
+			Data : <input type="text" id="ra" onblur="validaRa()"><br>
+			<br> Nome: <input type="text" id="nome" onblur="validaNome()"><br>
+			<br> Semestre: <input type="text" id="semestre"
+				onblur="validaSemestre()"><br> <br> Disciplina: <input
+				type="text" id="disciplina" onblur="validaDisciplina()"><br>
+			<br> Nota P1: <input type="text" id="p1" onblur="validaP1()"><br>
+			<br> Nota P2: <input type="text" id="p2" onblur="validaP2()"><br>
+			<br> Nota Trabalhos + Atividades: <input type="text"
+				id="trabalho" onblur="validaTrabalho()"><br> <br>
+			Quantidade Faltas: <input type="text" id="frequencia"
+				onblur="validaFrequencia()"><br> <br> <input
+				type="button" value="Calcular" onclick="calculaAluno()"
+				onblur="calculaAluno()">
+			<hr>
+			<div id="resultado"></div>
+		</article>
+	</section>
+
 </body>
 </html>
