@@ -9,37 +9,20 @@ import java.util.GregorianCalendar;
 
 public class TestaVetor {
 	public static void main(String[] args) throws Exception {
-		int numAulas = 3;
-		int numRevisao = 6;
-		GregorianCalendar[] vetorData = new GregorianCalendar[numAulas];
-		GregorianCalendar[][] matrizData = { { new GregorianCalendar(2019, 01, 15) },
-				{ new GregorianCalendar(2019, 02, 15) } };
-		
-		String vetorDataStr[] = {"02/01/2019", "09/01/2019","16/01/2019"};
+		int dia = 30;
+		int mes = 12;
+		int ano = 2020;
+		int vetorDia[] = new int[dia];
+		int vetorMes[] = new int[mes];
+		int vetorAno[] = new int[ano];
+		GregorianCalendar vetorData[] = new GregorianCalendar(2019,02,04);
 
-		SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
-		int cont = 0;
-
-		for (int l = 0; l < numAulas; l++) {
-			System.out.println(" = = = " + (l+1) + "º aula: " + (vetorDataStr[l])+" = = = ");
-			for (int c = 0; c < numAulas; c++) {
-				Calendar cal = Calendar.getInstance();
-				cal.setTime(df.parse(vetorDataStr[c]));
-				if (c == 1) {
-					int rev1 = 0;				
-					vetorData[rev1].add(Calendar.DAY_OF_MONTH, rev1);
-					System.out.println("Posição " + c + ": " + vetorDataStr[c]);
-				} else if (c == 2) {
-					int rev2 = 1;
-					vetorData[rev2].add(Calendar.DAY_OF_MONTH, rev2);
-					System.out.println("Posição " + c+ ": " + vetorDataStr[c]);
-				}else if(c == cont) {
-					int rev3 = 1;
-					vetorData[c].add(Calendar.DAY_OF_MONTH, rev3);
-					System.out.println("Posição " + c+ ": " + vetorDataStr[c]);
-				}
-			}
+		for (int m = 0; m < vetorMes.length; m++) {
+			vetorMes[m] = m;
+		}
+		for(int m = 0; m < vetorMes.length; m++) {
+			System.out.println("Mês: " + (vetorMes[m]+1));
 		}
 	}
-	
+
 }
