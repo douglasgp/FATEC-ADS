@@ -3,7 +3,9 @@ package br.com.review;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Scanner;
 
 public class GeradorDatas {
@@ -22,10 +24,10 @@ public class GeradorDatas {
 				//"4/1/2019", "4/8/2019","4/15/2019", "4/22/2019", "4/29/2019", "5/6/2019", "5/13/2019", "5/20/2019","5/27/2019", "6/3/2019", "6/10/2019", "6/17/2019", "6/24/2019" };
 		String disciplina[] = { "MCA002", "MET100", "LIN200" };
 		// ,"ISO100","ILP502","ILP010","IHW100","IES100","CCG006"};
-		// Date[][] DATAS1= new Date[NUM_LIN][NUM_COL];
-		Date[] datas = { new Date(), new Date() };
+		Calendar[][] matrizData = { { new GregorianCalendar(2019, 11, 02) },
+				{ new GregorianCalendar(2019, 02, 15) } };
 		// {{2/8/2019,2/8/2019,2/8/2019},{2/8/2019,2/8/2019,2.8.2019}};
-		DateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+		SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
 
 		/*for (int l = 0; l < NUM_LIN; l++) {
 			System.out.println(" = = = " + disciplina[l] + " = = = ");
@@ -38,7 +40,13 @@ public class GeradorDatas {
 		for (int l = 0; l < NUM_LIN; l++) {
 			System.out.println(" = = = " + disciplina[l] + " = = = ");
 			for (int c = 0; c < NUM_COL; c++) {
+
+				Calendar cal = Calendar.getInstance();
+				cal.setTime(df.parse(dataStr[l][c]));
+				
 				System.out.println((c+1)+"º aula: "+dataStr[l][c]);
+				matrizData[l][c].add(Calendar.DAY_OF_MONTH, 1);
+				System.out.println(matrizData[l][c]);
 				// System.out.println(novaData.format(datas[l][c]));
 			}
 		}
