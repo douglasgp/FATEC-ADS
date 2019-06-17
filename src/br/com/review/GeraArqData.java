@@ -11,31 +11,35 @@ public class GeraArqData {
 
 	public static void main(String[] args) throws Exception {
 		int numAulas = 2;
-		String dataStr[] = new String[numAulas];
+		int numRevisao = 4;
+		String dataStr[][] = new String[numAulas][numRevisao];
 		Calendar[] dataAula = new GregorianCalendar[numAulas];
 
-		
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		Calendar cal = Calendar.getInstance();
 		/*
-		 * String strDate = "01/07/1990"; 
-		 * SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy"); 
-		 * Calendar c = Calendar.getInstance();
-		 * c.setTime(sdf.parse(strDate)); 
-		 * //aqui está o "pulo do gato"
+		 * String strDate = "01/07/1990"; SimpleDateFormat sdf = new
+		 * SimpleDateFormat("dd/MM/yyyy"); Calendar c = Calendar.getInstance();
+		 * c.setTime(sdf.parse(strDate)); //aqui está o "pulo do gato"
 		 * System.out.println(new java.sql.Date(c.getTimeInMillis()));
 		 */
 
-		for (int i = 0; i < numAulas; i++) {
-			System.out.println("Data: ");
-			dataStr[i] = scan.nextLine();
-			cal.setTime(sdf.parse(dataStr[i]));
+		for (int l = 0; l < dataAula.length; l++) {
+			System.out.println("= = = = " + (l+1)+"º ciclo = = = =  ");
+			for (int c = 0; c < numRevisao; c++) {
+				System.out.println((c+1)+"º data: ");
+				dataStr[l][c] = scan.nextLine();
+				cal.setTime(sdf.parse(dataStr[l][c]));
+			}
 		}
-		
-		for (int i = 0; i < dataAula.length; i++) {
-			cal.setTime(sdf.parse(dataStr[i]));
-			System.out.println(new java.sql.Date(cal.getTimeInMillis()));
+
+		for (int l = 0; l < dataAula.length; l++) {
+			for (int c = 0; c < numRevisao; c++) {
+				cal.setTime(sdf.parse(dataStr[l][c]));
+				System.out.println(new java.sql.Date(cal.getTimeInMillis()));
+			}
 		}
+
 	}
 
 }
