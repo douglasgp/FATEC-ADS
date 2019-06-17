@@ -1,5 +1,5 @@
-package br.com.ilp010.aula25;
 
+package br.com.ilp010.aula25;
 import java.io.DataOutputStream;
 import java.io.FileOutputStream;
 
@@ -16,24 +16,24 @@ public class Projeto {
 		codigo[0] = 7564;
 		nome[0] = "Papel A4";
 		preco[0] = 12.90;
-		descricao[0] = "Report, branco, 75gt/m²";
+		descricao[0] = "Report, branco, 75gt/mï¿½";
 
 		codigo[1] = 7564;
 		nome[1] = "Papel A4";
 		preco[1] = 12.90;
-		descricao[0] = "Report, verde, 75gt/m²";
+		descricao[0] = "Report, verde, 75gt/mï¿½";
 
 		codigo[2] = 7564;
 		nome[2] = "Papel A4";
 		preco[2] = 12.90;
-		descricao[2] = "Report, vermelho, 75gt/m²";
+		descricao[2] = "Report, vermelho, 75gt/mï¿½";
 
 		codigo[3] = 7564;
 		nome[3] = "Papel A4";
 		preco[3] = 12.90;
-		descricao[3] = "Report, azul, 75gt/m²";
+		descricao[3] = "Report, azul, 75gt/mï¿½";
 
-		// Abrir arquivo catálogo
+		// Abrir arquivo catï¿½logo
 		DataOutputStream dos = new DataOutputStream(new FileOutputStream("produto.db"));
 		System.out.println("Aquivo aberto!");
 		// Escrever o tamnho
