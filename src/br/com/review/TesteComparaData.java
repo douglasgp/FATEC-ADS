@@ -23,15 +23,13 @@ public class TesteComparaData {
 		}
 
 		for (int i = 0; i < dataAula.length; i++) {
-			today.setTime(sdf.parse(dataAula[i]));
-			if (today.getTime() == calendar[i].getTime()) {
+			if (today.getTimeInMillis() == calendar[i].getTimeInMillis()) {
 				System.out.println((i + 1) + "º revisão!");
-			} else if (calendar[i].getTime() == today.getTime()) {
+			} else if (today.getTimeInMillis() == calendar[i].getTimeInMillis()) {
 				System.out.println((i + 1) + "º revisão!");
-			} else if (today.getTime() == calendar[i].getTime()) {
+			} else if (today.getTimeInMillis() == calendar[i].getTimeInMillis()) {
 				System.out.println((i + 1) + "º revisão!");
 			}
-
 		}
 	}
 
