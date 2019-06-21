@@ -10,6 +10,10 @@ import java.util.Scanner;
 
 public class GeradorDatas {
 	public static Scanner scan = new Scanner(System.in);
+	
+	public static int TAMANHO = 0;
+	public static int OPCAO_DISCIPLINA = 0;
+	
 	public static int totalAula = 0;
 	public static int NUM_DISCIPLINA = 3;
 	public static int NUM_LIN = NUM_DISCIPLINA;
@@ -18,38 +22,31 @@ public class GeradorDatas {
 
 	public static void menuPrincipal() throws Exception {
 		
-		String dataStr[][] = {{ "2/11/2019", "2/18/2019", "2/25/2019"},{"3/4/2019", "3/11/2019", "3/18/2019"},{"3/25/2019","4/1/2019", "4/8/2019"}};
-		
-			//{ "2/11/2019", "2/18/2019", "2/25/2019","3/4/2019", "3/11/2019", "3/18/2019", "3/25/2019",
-				//"4/1/2019", "4/8/2019","4/15/2019", "4/22/2019", "4/29/2019", "5/6/2019", "5/13/2019", "5/20/2019","5/27/2019", "6/3/2019", "6/10/2019", "6/17/2019", "6/24/2019" };
-		String disciplina[] = { "MCA002", "MET100", "LIN200" };
-		// ,"ISO100","ILP502","ILP010","IHW100","IES100","CCG006"};
-		Calendar[][] matrizData = { { new GregorianCalendar(2019, 11, 02) },
-				{ new GregorianCalendar(2019, 02, 15) } };
-		// {{2/8/2019,2/8/2019,2/8/2019},{2/8/2019,2/8/2019,2.8.2019}};
-		SimpleDateFormat df = new SimpleDateFormat("dd/MM/yyyy");
+		int opcao = 0;
+		do {
+			// mostra menu de opões
 
-		/*for (int l = 0; l < NUM_LIN; l++) {
-			System.out.println(" = = = " + disciplina[l] + " = = = ");
-			for (int c = 0; c < NUM_COL; c++) {
-				System.out.println("Informe data da " + (c + 1) + "º aula: ");
-				dataStr [c]= scan.nextLine();
-
+			System.out.println(" = = = = = = = = = = = = = = = = = = = = =  MENU 1 - PRINCIPAL  = = = = = = = = = = = = = = = = = = = = = = = = = =  ");
+			System.out.printf("%14.12s | %-14.17s | %-20.25s | %-17.20s | %-17.10s |%s\n","1. Registrar ", "2. Consultar datas ", "3. Gerar datas","4. Remover Produto", "5. Sair da ", "0. Finalizar");
+			System.out.printf("%11.14s | %-11.19s | %-20.25s | %-17.18s | %-17.12s |%s\n","  data de revisão   ", "  de aulas     ", "   de revisão        ","    do carrinho   ", "   aplicação", " Compra");
+			System.out.println(" = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = ");
+			
+			opcao = scan.nextInt();
+			// processa opção escolhida no menu
+			switch (opcao) {
+			case 1: //
+				criaDatasDisciplina();
+				break;
+			case 2:
+				menuPrincipal();
+				break;
+			case 3:
+				geraArqDatas();
+				break;
+			default:
+				System.out.println("Operação Inválida!");
 			}
-		}*/
-		for (int l = 0; l < NUM_LIN; l++) {
-			System.out.println(" = = = " + disciplina[l] + " = = = ");
-			for (int c = 0; c < NUM_COL; c++) {
-
-				Calendar cal = Calendar.getInstance();
-				cal.setTime(df.parse(dataStr[l][c]));
-				
-				System.out.println((c+1)+"º aula: "+dataStr[l][c]);
-				matrizData[l][c].add(Calendar.DAY_OF_MONTH, 1);
-				System.out.println(matrizData[l][c]);
-				// System.out.println(novaData.format(datas[l][c]));
-			}
-		}
+		} while (opcao != 0); // repete enquanto opção diferente de sair
 	}
 
 	public static void criaDatasDisciplina() {
@@ -81,4 +78,43 @@ public class GeradorDatas {
 			System.out.println(i1 + " - dia");
 		}
 	}
+
+	public static int processaDisciplina(int opcao) {
+		int resultado = 0;
+		if(opcao == 1) {
+			resultado = 8;
+		}else if(opcao == 2) {
+			resultado = 9;
+		}else if(opcao == 3) {
+			resultado = 9;
+		}else if(opcao == 4) {
+			resultado = 8;
+		}else if(opcao == 5) {
+			resultado = 7;
+		}else if(opcao == 6) {
+			resultado = 6;
+		}else {
+			System.out.println("Opção inválida!");
+			geraArqDatas();
+		}
+		return resultado;
+	}
+	
+	public static void geraArqDatas() {
+		int opcao = 0;
+		do {
+			// Exibe menu de opções
+			System.out.println("Informe o semestre: ");
+			OPCAO_DISCIPLINA = scan.nextInt();
+			
+			System.out.println(" = = = = = = = = = = = = = = = = = = = = =  MENU 2 - Gerador Datas  = = = = = = = = = = = = = = = = = = = = = = = = = =  ");
+			System.out.printf("%14.12s | %-14.17s | %-20.25s | %-17.20s | %-17.10s |%s\n","1. Registrar ", "2. Consultar datas ", "3. Consultar Carrinho","4. Retornar ao ", "5. Sair da ", "0. Finalizar");
+			System.out.printf("%11.14s | %-11.19s | %-20.25s | %-17.18s | %-17.12s |%s\n","  data de revisão   ", "  de aulas     ", "   de Compras        ","    Menu Principal   ", "   aplicação", " Compra");
+			System.out.println(" = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = ");
+			
+			int[] codigo = new int[TAMANHO];
+		} while (opcao != 0);
+		
+	}
+	
 }
