@@ -13,7 +13,7 @@ public class Gerador {
 		int TAMANHO = 0;
 
 		// Abrir arquivo CSV
-		BufferedReader br = new BufferedReader(new FileReader("produtos.csv"));
+		BufferedReader br = new BufferedReader(new FileReader("/home/douglasgp/Public/TestFiles/catalogo.db"));
 		int linhas = 0;
 		String linha = null;
 		while ((linha = br.readLine()) != null) {
@@ -28,8 +28,8 @@ public class Gerador {
 		double[] preco = new double[TAMANHO];
 		String[] descricao = new String[TAMANHO];
 		// Reabrir arquivo
-		br = new BufferedReader(new FileReader("produtos.csv"));
-		// Descarte da 1º linha
+		br = new BufferedReader(new FileReader("/home/douglasgp/Public/TestFiles/catalogo.db"));
+		// Descarte da 1ï¿½ linha
 		br.readLine();
 		//
 		linha = null;
@@ -44,8 +44,8 @@ public class Gerador {
 		}
 		br.close();
 
-		// Abrir catálogo
-		DataOutputStream dis = new DataOutputStream(new FileOutputStream("produto.db"));
+		// Abrir catï¿½logo
+		DataOutputStream dis = new DataOutputStream(new FileOutputStream("/home/douglasgp/Public/TestFiles/catalogo.db"));
 		System.out.println("Arquivo aberto.");
 		// Escrever tamanho
 		dis.writeInt(TAMANHO);

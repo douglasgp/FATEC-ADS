@@ -4,7 +4,7 @@ import java.io.DataOutputStream;
 import java.io.FileOutputStream;
 
 public class GeraCatalogo {
-	public final static int TAMANHO = 10;
+	public final static int TAMANHO = 0;
 
 	public static void main(String[] args) throws Exception {
 
