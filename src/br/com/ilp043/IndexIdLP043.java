@@ -1,4 +1,4 @@
-package ILP043;
+package br.com.ilp043;
 
 import java.util.Scanner;
 
