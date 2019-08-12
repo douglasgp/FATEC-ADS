@@ -16,7 +16,7 @@ public class TestaLeCatalogo {
 		double[] preco = new double[TAMANHO];
 		String[] descricao = new String[TAMANHO];
 		// Leitura dos itens
-		System.out.printf("%4.3s | %-20.8s | %7.9s | %s\n", "C�D", "NOME", "PRE�O", "DESCRI��O");
+		System.out.printf("%4.3s | %-20.8s | %7.9s | %s\n", "COD", "NOME", "PREÇO", "DESCRIÇÃO");
 		for(int i = 0; i < TAMANHO; i++) {
 			codigo[i] = dis.readInt();
 			nome[i] = dis.readUTF();
