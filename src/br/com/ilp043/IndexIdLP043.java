@@ -2,6 +2,8 @@ package br.com.ilp043;
 
 import java.util.Scanner;
 
+import br.com.ilp043.aula02.Aula01;
+
 public class IndexIdLP043 {
 	public static Scanner scan = new Scanner(System.in);
 	public static int aula = 0;

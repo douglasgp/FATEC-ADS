@@ -1,4 +1,4 @@
-package br.com.ilp043;
+package br.com.ilp043.aula02;
 
 import java.util.Scanner;
 
