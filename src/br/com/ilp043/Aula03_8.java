@@ -12,13 +12,16 @@ public class Aula03_8 {
 	
 	public static void main(String[] args) {
 		int valor = 0;
-		int dez = 100;
+		int dez = 0;
+		int cent = 0;
 		int res = 0;
 		System.out.println("Informe um nº: ");
 		valor = scan.nextInt();
 		
-		res = valor^valor;
+		dez = valor%10;
+		cent = valor%100;
 		
-		System.out.println(res);
+		System.out.println("dezena: " + dez);
+		System.out.println("centena: " + cent);
 	}
 }
