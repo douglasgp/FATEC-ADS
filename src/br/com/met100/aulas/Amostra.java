@@ -8,12 +8,12 @@ public class Amostra {
 	public static void main(String[] args) {
 		int amostra = 0;
 		int resultado;
-		System.out.println("Informe o Espaço Amostra: ");
+		System.out.println("Informe o Espaço Amostral: ");
 		amostra = scan.nextInt();
 		
 		resultado = amostra*amostra;
 		
-		System.out.println("Espaço amosta = " + resultado);
+		System.out.println("Espaço amostral = " + resultado);
 		
 	}
 }
