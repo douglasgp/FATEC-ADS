@@ -1,4 +1,4 @@
-package br.com.ilp010;
+package br.com.ied001;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
