@@ -3,19 +3,19 @@ package br.com.ied001.ordenacao;
 import java.util.Random;
 
 public class GeraNumero {
-	// Instancia um aobjeto da classe Random usando o construtor padrão
+	// Instancia um aobjeto da classe Random usando o construtor padrï¿½o
 	public static Random gerador = new Random();
 
 	public static int[] geraInt(int quantidade) {
 		int[] valor = new int[quantidade];
-		// Imprime uma sequência de 10 números inteiros aleatórios
+		// Imprime uma sequï¿½ncia de 10 nï¿½meros inteiros aleatï¿½rios
 		for (int i = 0; i < quantidade; i++) {
 			valor[i] = gerador.nextInt(quantidade*quantidade);
 			// System.out.println(gerador.nextLong());
 		}
 		return valor;
 	}
-	// Método principal para testar as funcionalidades de geração de valores
+	// Mï¿½todo principal para testar as funcionalidades de geraï¿½ï¿½o de valores
 	/*
 	public static void main(String[] args) {
 		int qtd = 20;
