@@ -3,10 +3,10 @@ package br.com.ied001.aulas;
 public class Pilha02 {
 	// Array interno para armazenar elemento da pilha
 	private int v[];
-	// Controle da próxima posição livre
+	// Controle da prï¿½xima posiï¿½ï¿½o livre
 	private int topo;
 
-	// Construtor padrão, cria pilha com tamanho 10
+	// Construtor padrï¿½o, cria pilha com tamanho 10
 	public Pilha02() {
 		v = new int[10];
 	}
@@ -22,22 +22,22 @@ public class Pilha02 {
 		topo++;
 	}
 
-	// Retorna capaciade (máxima) da pilha
+	// Retorna capaciade (mï¿½xima) da pilha
 	public int capacidade() {
 		return v.length;
 	}
 
-	// Verifica se pilha está cheia
+	// Verifica se pilha estï¿½ cheia
 	public boolean cheia() {
 		return capacidade() == comprimento();
 	}
 
-	// Retorna o número de elementos presentes na pilha
+	// Retorna o nï¿½mero de elementos presentes na pilha
 	public int comprimento() {
 		return topo;
 	}
 
-	// Consulta, sem remover, o elemento da posição dada
+	// Consulta, sem remover, o elemento da posiï¿½ï¿½o dada
 	public int elemento(int pos) {
 		return v[pos];
 	}
@@ -47,12 +47,12 @@ public class Pilha02 {
 		return v[--topo];
 	}
 
-	// Verifica se pilha está vazia
+	// Verifica se pilha estï¿½ vazia
 	public boolean vazia() {
 		return comprimento() == 0;
 	}
 
-	// Retorna uma String com a representação da pilha
+	// Retorna uma String com a representaï¿½ï¿½o da pilha
 	public String toString() {
 		StringBuilder sb = new StringBuilder("[");
 		for (int i = 0; i < topo; i++) {
@@ -61,6 +61,24 @@ public class Pilha02 {
 		}
 		sb.append("]");
 		return sb.toString();
+	}
+
+	/* Estrutura para ordenar uma pilha */
+	public int[] ordenaPilha(int[] vetor) {
+		int prox = 0;
+		int aux = 0;
+		while (aux < vetor.length) {
+			for (int i = 0; i < vetor.length - 1; i++) {
+
+				if (vetor[i] > vetor[i + 1]) {
+					prox = vetor[i];
+					vetor[i] = vetor[i + 1];
+					vetor[i + 1] = prox;
+				}
+			}
+			aux++;
+		}
+		return vetor;
 	}
 
 }
