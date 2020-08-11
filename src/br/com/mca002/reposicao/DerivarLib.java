@@ -1,11 +1,12 @@
 package br.com.mca002.reposicao;
 
+/*
 import org.lsmp.djep.djep.DJep;
 import org.nfunk.jep.Node;
 import org.nfunk.jep.ParseException;
-
+*/
 public class DerivarLib {
-	public String Derivar(String funcion) {
+	/*public String Derivar(String funcion) {
 		String derivada = "";
 		DJep Derivar = new DJep();
 		Derivar.addStandardFunctions();
@@ -16,10 +17,11 @@ public class DerivarLib {
 		Derivar.setImplicitMul(true);
 		Derivar.addStandardDiffRules();
 		 
-		/*try {
+		try {
 			Node node = Derivar.parse(funcion);
 			Node diff = Derivar.differentiate(node, "x");
-		}*/
+		}
 		return derivada;
 	}
+*/
 }

@@ -81,4 +81,9 @@ public class Pilha02 {
 		return vetor;
 	}
 
+	public boolean verificaOrndena() {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
 }

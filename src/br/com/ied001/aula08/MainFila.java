@@ -1,5 +1,7 @@
 package br.com.ied001.aula08;
 
+import br.com.ied001.aulas08.FilaInt;
+
 public class MainFila {
 	public static void main(String[] args) {
 
